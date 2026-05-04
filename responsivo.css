@@ -1,0 +1,16 @@
+@media all and (max-width: 4.4em) {
+}
+
+/* alterar visualização do <nav>
+&.nav{display:none}
+*/
+
+.icone {
+    svg {
+        width: 10rem;
+    }
+
+    &.icon-close {
+        display: none;
+    }
+}
