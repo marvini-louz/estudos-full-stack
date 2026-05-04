@@ -5,6 +5,13 @@
 &.nav{display:none}
 */
 
+/* 
+nav{
+display:flex
+flex-flow:colunm
+align-items:center
+justify-content:center}
+*/
 .icone {
     svg {
         width: 10rem;
