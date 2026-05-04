@@ -1,23 +1,314 @@
-@media all and (max-width: 4.4em) {
+:root {
+    --bg: #f7f5f2;
+    --surface: #ffffff;
+    --border: #e4e0db;
+    --text: #1c1a18;
+    --muted: #7a756e;
+    --accent: #c0522a;
+    --nav-h: 60px;
+    --radius: 10px;
+    --font-body: "DM Sans", sans-serif;
+    --font-head: "Lora", serif;
 }
 
-/* alterar visualização do <nav>
-&.nav{display:none}
-*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
 
-/* 
-nav{
-display:flex
-flex-flow:colunm
-align-items:center
-justify-content:center}
-*/
-.icone {
-    svg {
-        width: 10rem;
+/* NAVBAR */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: var(--nav-h);
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+
+    /* ── logo ── */
+    & .nav-logo {
+        font-family: var(--font-head);
+        font-size: 1.25rem;
+        font-style: italic;
+        color: var(--text);
+        letter-spacing: -0.01em;
+
+        & span {
+            color: var(--accent);
+        }
     }
 
-    &.icon-close {
+    /* ── lista de links ── */
+    & .nav-links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        & li a {
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 6px;
+            color: var(--muted);
+            transition:
+                color 0.18s,
+                background 0.18s;
+
+            &:hover {
+                color: var(--text);
+                background: var(--bg);
+            }
+
+            &.active {
+                color: var(--text);
+                font-weight: 600;
+            }
+        }
+
+        /* link de contato com borda */
+        & li:last-child a {
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 6px 16px;
+
+            &:hover {
+                border-color: var(--accent);
+                color: var(--accent);
+                background: transparent;
+            }
+        }
+    }
+
+    /* ── hamburguer (escondido no desktop) ── */
+    & .nav-toggle {
         display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 6px;
+        background: none;
+        border: none;
+
+        & span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text);
+            border-radius: 2px;
+            transition:
+                transform 0.25s,
+                opacity 0.25s;
+        }
+    }
+}
+
+/* MAIN */
+.main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 56px 48px 80px;
+
+    /* ── hero text ── */
+    & .hero {
+        margin-bottom: 48px;
+
+        & h1 {
+            font-family: var(--font-head);
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+
+            & em {
+                color: var(--accent);
+            }
+        }
+
+        & p {
+            font-size: 1rem;
+            color: var(--muted);
+            max-width: 520px;
+        }
+    }
+
+    /* ── galeria estilo pinterest (masonry via columns) ── */
+    & .gallery {
+        columns: 3;
+        column-gap: 16px;
+
+        & .card {
+            break-inside: avoid;
+            margin-bottom: 16px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            transition:
+                transform 0.22s,
+                box-shadow 0.22s;
+
+            &:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+            }
+
+            & img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            & .card-info {
+                padding: 12px 14px 14px;
+
+                & .card-tag {
+                    font-size: 0.7rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                    color: var(--accent);
+                    margin-bottom: 4px;
+                }
+
+                & .card-title {
+                    font-family: var(--font-head);
+                    font-size: 0.95rem;
+                    line-height: 1.35;
+                    color: var(--text);
+                }
+            }
+        }
+    }
+}
+
+/* FOOTER */
+.footer {
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 28px 48px;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+/* CSS PARA MOBILE   */
+
+@media (max-width: 768px) {
+    /* navbar mobile */
+    .navbar {
+        padding: 0 20px;
+        position: relative; /* menu dropdown fica abaixo */
+
+        /* mostra botão hamburguer */
+        & .nav-toggle {
+            display: flex;
+        }
+
+        /* links viram menu vertical oculto */
+        & .nav-links {
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2px;
+            position: absolute;
+            top: var(--nav-h);
+            left: 0;
+            right: 0;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 20px 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+
+            /* quando aberto via JS */
+            &.open {
+                display: flex;
+            }
+
+            & li {
+                width: 100%;
+            }
+
+            & li a {
+                display: block;
+                padding: 10px 14px;
+                width: 100%;
+                font-size: 0.95rem;
+            }
+
+            & li:last-child a {
+                margin-top: 6px;
+                text-align: center;
+            }
+        }
+    }
+
+    /* conteúdo principal mobile */
+    .main {
+        padding: 32px 20px 60px;
+
+        & .hero {
+            margin-bottom: 32px;
+
+            & h1 {
+                font-size: 1.75rem;
+            }
+            & p {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* galeria vira 2 colunas no mobile */
+        & .gallery {
+            columns: 2;
+            column-gap: 12px;
+
+            & .card {
+                margin-bottom: 12px;
+
+                & .card-info {
+                    padding: 10px 11px 12px;
+
+                    & .card-title {
+                        font-size: 0.85rem;
+                    }
+                }
+            }
+        }
+    }
+
+    /* footer mobile */
+    .footer {
+        padding: 24px 20px;
+    }
+}
+
+/* muito pequeno: 1 coluna */
+@media (max-width: 420px) {
+    .main {
+        & .gallery {
+            columns: 1;
+        }
     }
 }

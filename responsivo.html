@@ -1,42 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsivo</title>
-
-    <link rel="stylesheet" href="responsivo.css" media="(max-width: 1160px)">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemplo de Página</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet" />
     <link rel="stylesheet" href="responsivo.css">
+
+
 </head>
 
 <body>
-    <div class="icone icon-menu">
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512"
-            height="512" x="0" y="0" viewBox="0 0 464.205 464.205" style="enable-background:new 0 0 512 512"
-            xml:space="preserve" class="">
-            <g>
-                <path
-                    d="M435.192 406.18H29.013C12.989 406.18 0 393.19 0 377.167s12.989-29.013 29.013-29.013h406.18c16.023 0 29.013 12.99 29.013 29.013-.001 16.023-12.99 29.013-29.014 29.013zM435.192 261.115H29.013C12.989 261.115 0 248.126 0 232.103s12.989-29.013 29.013-29.013h406.18c16.023 0 29.013 12.989 29.013 29.013s-12.99 29.012-29.014 29.012zM435.192 116.051H29.013C12.989 116.051 0 103.062 0 87.038s12.989-29.013 29.013-29.013h406.18c16.023 0 29.013 12.989 29.013 29.013s-12.99 29.013-29.014 29.013z"
-                    fill="#000000" opacity="1" data-original="#000000" class=""></path>
-            </g>
-        </svg>
-    </div>
 
-    <div class="icone icon-close">
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512"
-            height="512" x="0" y="0" viewBox="0 0 320.591 320.591" style="enable-background:new 0 0 512 512"
-            xml:space="preserve" class="">
-            <g>
-                <path
-                    d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
-                    fill="#000000" opacity="1" data-original="#000000" class=""></path>
-                <path
-                    d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
-                    fill="#000000" opacity="1" data-original="#000000" class=""></path>
-            </g>
-        </svg>
-    </div>
+    <!-- =================== NAVBAR =================== -->
+    <nav class="navbar">
+        <a href="#" class="nav-logo">meu<span>site</span></a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#" class="active">Início</a></li>
+            <li><a href="#">Itens</a></li>
+            <li><a href="#">Lista</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">contato@email.com</a></li>
+        </ul>
+    </nav>
+
+    <!-- =================== MAIN =================== -->
+    <main class="main">
+
+        <div class="hero">
+            <h1>Inspirações &amp; <em>ideias</em><br>de todo lugar</h1>
+            <p>Uma seleção simples de imagens e referências — estilo Pinterest, sem frescura.</p>
+        </div>
+
+        <!-- galeria masonry -->
+        <div class="gallery">
+
+            <div class="card">
+                <img src="https://i.pinimg.com/564x/a1/2b/3c/a12b3c4d5e6f7a8b9c0d1e2f3a4b5c6d.jpg"
+                    onerror="this.src='https://picsum.photos/seed/pin1/400/520'" alt="Imagem 1" loading="lazy" />
+                <div class="card-info">
+                    <div class="card-tag">Decoração</div>
+                    <div class="card-title">Sala minimalista com toque natural</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://picsum.photos/seed/estudio/400/300" alt="Estúdio" loading="lazy" />
+                <div class="card-info">
+                    <div class="card-tag">Espaço</div>
+                    <div class="card-title">Home office organizado e tranquilo</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://picsum.photos/seed/natureza/400/560" alt="Natureza" loading="lazy" />
+                <div class="card-info">
+                    <div class="card-tag">Natureza</div>
+                    <div class="card-title">Floresta densa e trilha no outono</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://picsum.photos/seed/cafe2/400/420" alt="Café" loading="lazy" />
+                <div class="card-info">
+                    <div class="card-tag">Food</div>
+                    <div class="card-title">Latte art e manhãs lentas</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://picsum.photos/seed/arq3/400/600" alt="Arquitetura" loading="lazy" />
+                <div class="card-info">
+                    <div class="card-tag">Arquitetura</div>
+                    <div class="card-title">Fachada brutalista com jardim vertical</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://picsum.photos/seed/livros/400/340" alt="Livros" loading="lazy" />
+                <div class="card-info">
+                    <div class="card-tag">Leitura</div>
+                    <div class="card-title">Estante organizada por cor</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://picsum.photos/seed/planta1/400/460" alt="Plantas" loading="lazy" />
+                <div class="card-info">
+                    <div class="card-tag">Plantas</div>
+                    <div class="card-title">Vasos de cerâmica com suculentas</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://picsum.photos/seed/viagem8/400/280" alt="Viagem" loading="lazy" />
+                <div class="card-info">
+                    <div class="card-tag">Viagem</div>
+                    <div class="card-title">Vista do terraço ao entardecer</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://picsum.photos/seed/moda5/400/500" alt="Moda" loading="lazy" />
+                <div class="card-info">
+                    <div class="card-tag">Moda</div>
+                    <div class="card-title">Look casual em tons terrosos</div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- =================== FOOTER =================== -->
+    <footer class="footer">
+        © 2026 meusite — feito com cuidado
+    </footer>
+
+    <!-- =================== JS: HAMBURGUER =================== -->
+    <script>
+        const toggle = document.getElementById('navToggle');
+        const links = document.getElementById('navLinks');
+
+        toggle.addEventListener('click', () => {
+            links.classList.toggle('open');
+        });
+
+        // fecha o menu ao clicar em qualquer link
+        links.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => links.classList.remove('open'));
+        });
+    </script>
 
 </body>
 
