@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main>
+        <section class="flex col secao">
+            <h1 class="caixa__main--h1">APRENDENDO SASS</h1>
+
+            <h2 class="caixa__sub--h2">Dentro da pasta do SASS rodar esses comandos:</h2>
+            <div class="flex col caixa__main">
+                <pre class="secao--pretext">npm init</pre>
+                <p class="secao--text">Inicia o projeto com "package.json" lembrar de dar "cd path"</p>
+
+                <pre class="secao--pretext">npm install</pre>
+                <p class="secao--text"> instala todos pacotes que contém o package.json</p>
+
+                <pre class="secao--pretext">npm install --save-dev sass</pre>
+                <p class="secao--text">Inicia a pasta de dependências do projeto "node-modules"</p>
+
+                <p class="secao--text">Instalação de pacotes para build do css final.</p>
+                <pre class="secao--pretext">npm install postcss postcss-cli autoprefixer --save-dev </pre>
+                <pre class="secao--pretext">npm install npm-run-all --save-dev </pre>
+
+                <p class="secao--text">Adicinar metedado depois</p>
+                <pre class="secao--text">npm pkg set repository="https://github.com/usuario/repositorio.git"</pre>
+
+                <p class="secao--text">scripts padrões para todo projeto, dentro do package.json </p>
+                <img class="secao--image" src="/SASS/images/scripts-package-json.png" alt="">
+
+                <p class="secao--text"> Para declarar variáveis em sass usa o $</p>
+                <pre class="secao--pretext">
+$variavel value
+$cinza: #303030;
+$cinza-trans: rgba(48, 48, 48, 0.15);
+                </pre>
+
+            </div>
+
+            <h2 class="caixa__sub--h2">Mixing e Includes</h2>
+            <div class="flex col caixa__sub">
+                <p class="secao--text">Serve para evitar várias repetições, onde os elementos sempre usam os mesmos
+                    parâmetros</p>
+                <pre class="secao--pretext">
+@mixin container-flex($flow: row, $align: stretch, $justify: start, $gap: 1rem) {
+    display: flex;
+    flex-flow: $flow;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}
+
+@mixin textos($size: 1.6rem, $weigth: 100, $height: 1.4) {
+    font-size: $size;
+    font-weight: $weigth;
+    line-height: $height;
+}
+                </pre>
+                <p class="secao--text">Onde usaria por exemplo, display, flex-flow, font-size etc. você usa</p>
+                <pre class="secao--pretext">
+@include [nome do mixin({argumentos})] 
+                </pre>
+                <p class="secao--text">Para usar argumentos específicos, deve declarar no uso, e os outros serão
+                    ignorados, usando o padrão. Exemplo:</p>
+                <pre class="secao--pretext">
+@include  textos($size: 2rem)
+
+@include container-flex($flow: column, $gap: 1.6rem)
+                </pre>
+            </div>
+
+            <h2 class="caixa__sub--h2">Mixing e Includes - Responsivo</h2>
+            <div class="flex col caixa__sub">
+                <p class="secao--text">Serve para evitar várias repetições, e deixar a página responsiva com mixin</p>
+                <pre class="secao--pretext">
+@mixin responsive($tamanho) {
+    @if $tamanho == small {
+        @media (max-width: 27.5em) {
+            @content;
+        }
+    } @else if $tamanho == medium {
+        @media (max-width: 48em) {
+            @content;
+        }
+    } @else if $tamanho == big {
+        @media (max-width: 90em) {
+            @content;
+        }
+    } @else {
+        @media (max-width: 110em) {
+            @content;
+        }
+    }
+}
+                </pre>
+                <p class="secao--text">Você define o tamanho da media querie dentro do elemento</p>
+                <pre class="secao--pretext">
+.classe-elemento{
+    font-size: 2rem;
+
+    //exemplo de querie para mobile
+    @include responsive(small){
+        font-size: 1.6rem;
+    } 
+}
+                </pre>
+            </div>
+
+            <h2 class="caixa__sub--h2">Placeholder e Extend </h2>
+            <div class="flex col caixa__sub">
+                <p class="secao--text">para usar um placeholder usa o %, no elemento uso o @extend %placeholder, como
+                    por exemplo para
+                    links/botão</p>
+                <pre class="secao--pretext">
+%botao-lv {
+    align-self: center;
+    color: #e7b4b4;
+    font-weight: 500;
+    background-color: #303030;
+    border-radius: 20rem;
+    padding: 1.02rem 2.5rem;
+    text-decoration: none;
+    transition: all ease-in 150ms;
+}
+%botao-ha {
+    align-self: center;
+    font-weight: 500;
+    color: #8b0000;
+    background-color: #30303013;
+}
+                </pre>
+                <p class="secao--text">Exemplo de uso:</p>
+                <pre class="secao--pretext">
+&__btn:link,
+&__btn:visited {
+    @extend %botao-lv;
+}
+
+&__btn:hover,
+&__btn:active {
+    @extend %botao-ha;
+}
+                </pre>
+            </div>
+
+            <h2 class="caixa__sub--h2">Nesting SASS</h2>
+            <div class="flex col caixa__sub">
+                <pre class="secao--pretext">.caixa__main{
+    &--h1{}
+}
+                </pre>
+                <p class="secao--text">o & copia toda a classe pai ex.: caixa__main--h1 o & repete o caixa__main
+                </p>
+            </div>
+
+            <h2 class="caixa__sub--h2">Funções em SASS</h2>
+            <div class="flex col caixa__sub">
+                <p class="secao--text"> Para criar funções em sass</p>
+                <pre class="secao--pretext">@function multiplicar($a, $b) {
+    @return $a * $b;
+}
+@function dividir($a, $b) {
+    @return $a / $b;
+}</pre>
+            </div>
+
+
+        </section>
+    </main>
+
+</body>
+
+</html>

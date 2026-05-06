@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
+.secao__btn:link, .secao__btn:visited {
+  align-self: center;
+  color: #e7b4b4;
+  font-weight: 500;
+  background-color: #303030;
+  border-radius: 20rem;
+  padding: 1.02rem 2.5rem;
+  text-decoration: none;
+  transition: all ease-in 150ms;
+}
+
+.secao__btn:hover, .secao__btn:active {
+  align-self: center;
+  font-weight: 500;
+  color: #8b0000;
+  background-color: rgba(48, 48, 48, 0.0745098039);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "cabin", sans-serif;
+  line-height: 1.4;
+  background-color: aliceblue;
+}
+
+.flex {
+  display: flex;
+}
+.flex.wrap {
+  flex-wrap: wrap;
+}
+.flex.nowrap {
+  flex-flow: row nowrap;
+}
+.flex.col {
+  flex-flow: column;
+}
+.flex.col.wrap {
+  flex-wrap: wrap;
+}
+.flex.col.nowrap {
+  flex-flow: column nowrap;
+}
+
+.secao {
+  gap: 1.6rem;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+.secao .caixa__main,
+.secao .caixa__sub {
+  gap: 3rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 2rem rgba(48, 48, 48, 0.15);
+  align-items: start;
+  width: 100%;
+  max-width: 100rem;
+}
+.secao .caixa__main--h1, .secao .caixa__main--h2,
+.secao .caixa__sub--h1,
+.secao .caixa__sub--h2 {
+  text-align: center;
+  color: #8b0000;
+}
+.secao .caixa__main--h1,
+.secao .caixa__sub--h1 {
+  font-size: 4rem;
+  font-weight: 200;
+  line-height: 1.4;
+  color: #8b0000;
+}
+.secao .caixa__main--h2,
+.secao .caixa__sub--h2 {
+  font-size: 3rem;
+  font-weight: 200;
+  line-height: 1.4;
+  color: #ff5858;
+}
+.secao--text {
+  font-size: 2rem;
+}
+.secao--pretext {
+  font-size: 1.6rem;
+}
+.secao--image {
+  width: 60rem;
+}
+
+/*# sourceMappingURL=style.comp.css.map */

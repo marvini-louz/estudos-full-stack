@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
+
+// Variáveis
+$cinza: #303030;
+$cinza-trans: rgba(48, 48, 48, 0.15);
+$darkred: #8b0000;
+$lightred: lighten(#8b0000, 40%);
+$dark-blue: darken(#0104ce, 1%);
+$light-blue: lighten(#0104ce, 30%);
+
+// Funções
+@function multiplicar($a, $b) {
+    @return $a * $b;
+}
+@function dividir($a, $b) {
+    @return $a / $b;
+}
+
+// propriedades repitidas
+
+@mixin container-flex($flow, $align, $justify, $gap) {
+    display: flex;
+    flex-flow: $flow;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}
+// para importar @include flex-col
+@mixin textos($size, $weigth, $height, $color) {
+    font-size: $size;
+    font-weight: $weigth;
+    line-height: $height;
+    color: $color;
+}
+@mixin responsive($tamanho) {
+    @if $tamanho == small {
+        @media (max-width: 27.5em) {
+            @content;
+        }
+    } @else if $tamanho == medium {
+        @media (max-width: 48em) {
+            @content;
+        }
+    } @else if $tamanho == big {
+        @media (max-width: 90em) {
+            @content;
+        }
+    } @else {
+        @media (max-width: 110em) {
+            @content;
+        }
+    }
+}
+// para importar @include textos(tamamho, peso, altura)
+
+// placeholder quem usa é o @extend
+%botao-lv {
+    align-self: center;
+    color: #e7b4b4;
+    font-weight: 500;
+    background-color: #303030;
+    border-radius: 20rem;
+    padding: 1.02rem 2.5rem;
+    text-decoration: none;
+    transition: all ease-in 150ms;
+}
+%botao-ha {
+    align-self: center;
+    font-weight: 500;
+    color: #8b0000;
+    background-color: #30303013;
+}
+
+// Goblais
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "cabin", sans-serif;
+    line-height: 1.4;
+    background-color: aliceblue;
+}
+
+.flex {
+    display: flex;
+    &.wrap {
+        flex-wrap: wrap;
+    }
+    &.nowrap {
+        flex-flow: row nowrap;
+    }
+    &.col {
+        flex-flow: column;
+        &.wrap {
+            flex-wrap: wrap;
+        }
+        &.nowrap {
+            flex-flow: column nowrap;
+        }
+    }
+}
+
+.secao {
+    gap: 1.6rem;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+
+    .caixa__main,
+    .caixa__sub {
+        gap: 3rem;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 2rem $cinza-trans;
+        align-items: start;
+        width: 100%;
+        max-width: 100rem;
+
+        &--h1,
+        &--h2 {
+            text-align: center;
+            color: $darkred;
+        }
+        &--h1 {
+            @include textos(4rem, 200, 1.4, $darkred);
+        }
+        &--h2 {
+            @include textos(3rem, 200, 1.4, $lightred);
+        }
+    }
+    &__btn:link,
+    &__btn:visited {
+        @extend %botao-lv;
+    }
+
+    &__btn:hover,
+    &__btn:active {
+        @extend %botao-ha;
+    }
+    &--text {
+        font-size: 2rem;
+    }
+
+    &--pretext {
+        font-size: 1.6rem;
+    }
+    &--image {
+        width: 60rem;
+    }
+}
