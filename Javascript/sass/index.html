@@ -5,19 +5,193 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aprendendo JavaScript</title>
+
 </head>
 
 <body>
-    <h1>Aprendendo JavaScript</h1>
+    <div>
+        <h1>Aprendendo JavaScript</h1>
 
-    <div class="flex col secao">
-        <p>comandos básicos</p>
-        <pre>
+        <section>
+            <h2>Iniciando</h2>
+            <div>
+                <p>Comandos básicos - script escrito direto no body, inline</p>
+                <pre><code>
+&lt;script&gt;
     console.log("Hello Fellas");
     alert("Helo fella")
-        </pre>
+&lt;/script&gt;
+                </code></pre>
+                <p>Script linkado no head e/ou body</p>
+                <p>Script no head executa antes do html</p>
+                <p>Script no fim do body executa após carregamento</p>
+                <pre><code>
+&lt;script src="/Javascript/sass/javascript/script.js"&gt;&lt;/script&gt;
+                </code></pre>
+                <p>Caixa de input no navegador</p>
+                <pre><code>
+prompt("Tell me everything you know.", "...");
+                </code></pre>
+            </div>
+
+        </section>
+
+        <section>
+            <h2>Tipos de Dados</h2>
+
+            <h3>Strings</h3>
+            <div>
+                <pre><code>
+"This is the first line\nAnd this is the second."
+                </code></pre>
+                <p>Output:</p>
+                <p> This is the first line <br>And this is the second. </p>
+                <pre><code>
+A newline character is written like \"\n"\"."
+            </code></pre>
+                <p>Output:</p>
+                <p>A newline character is written like "\n".</p>
+                <pre><code>
+"con" + "cat" + "e" + "nate"
+                </code></pre>
+                <p>Output:</p>
+                <p>concatenate</p>
+            </div>
+
+            <h3>Boolean</h3>
+            <div>
+                <pre>
+                        <code>
+console.log(3 &gt; 2)
+// → true
+console.log(3 &lt; 2)
+// → false
+console.log("Aardvark" &lt; "Zoroaster")
+// → true
+                        </code>
+                    </pre>
+                <p>Letras maiúsculas serão semcode “menores” que as minúsculas, portanto, “Z” &lt; “a” é verdadeiro.
+                </p>
+                <pre>
+                        <code>
+"and"
+console.log(true && false)
+// → false
+console.log(true && true)
+// → true
+"or"
+console.log(false || true)
+// → true
+console.log(false || false)
+// → false
+console.log("Itchy" != "Scratchy")
+// → true
+console.log(NaN == NaN)
+// → false
+                        </code>
+                    </pre>
+            </div>
+
+            <h3>Variáveis</h3>
+            <div>
+                <p>Declarar variáveis e manter seu tipo, use o "var", e camelCase </p>
+                <p><strong>variaveis sem o var pode interferir em outras variáveis sem o var</strong></p>
+                <pre>
+                    <code>
+var [nome_variavel] = "Marcelo"
+ou
+[nome_variavel] = 1
+ou
+var [_nome_variavel]
+var [$nome_variável]
+ou
+let [nomeVariavel]
+const [nome_variavel]
+                    </code>
+                </pre>
+            </div>
+
+        </section>
+
+        <section>
+            <h2>Fluxos de Controle</h2>
+
+            <h3>Fluxo linear</h3>
+            <div>
+                <pre><code>
+var theNumber = Number(prompt("Pick a number", ""));
+alert("Your number is the square root of " + theNumber * theNumber);
+</code></pre>
+            </div>
+
+            <h3>Fluxo condicional</h3>
+            <div>
+                <p>IF e ELSE</p>
+                <pre><code>
+var theNumber = Number(prompt("Pick a number", ""));
+if (!isNaN(theNumber))
+    alert("Your number is the square root of " +
+        theNumber * theNumber);
+else
+    alert("Hey. Why didn't you give me a number?");
+                </code></pre>
+
+                <p>Switch</p>
+                <pre><code>
+switch (prompt("What is the weather like?")) {
+    case "rainy":
+        console.log("Remember to bring an umbrella.");
+        break;
+    case "sunny":
+        console.log("Dress lightly.");
+    case "cloudy":
+        console.log("Go outside.");
+        break;
+    default:
+        console.log("Unknown weather type!");
+        break;
+}
+            </code></pre>
+            </div>
+
+            <h3>Fluxo de Loop</h3>
+            <div>
+                <p>Loop While</p>
+                <pre><code>
+var number = 0;
+while (number <= 12) {
+console.log(number);
+number = number + 2;
+}
+// → 0
+// → 2
+// … etcetera
+                </code></pre>
+
+                <p>Loop Do</p>
+                <pre><code>
+do {
+    var name = prompt("Who are you?");
+} while (!name);
+console.log(name);
+                </code></pre>
+
+                <p>Loop For</p>
+                <pre><code>
+for (var number = 0; number <= 12; number = number + 2)
+console.log(number);
+// → 0
+// → 2
+// … etcetera
+                </code></pre>
+            </div>
+
+
+        </section>
+
     </div>
 
+    <script src="/Javascript/sass/javascript/script.js"></script>
 </body>
 
 </html>
