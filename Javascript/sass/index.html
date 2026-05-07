@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aprendendo JavaScript</title>
 
+    <link rel="stylesheet" href="/Javascript/sass/css/style.css">
 </head>
 
 <body>
@@ -32,6 +33,18 @@
                 <pre><code>
 prompt("Tell me everything you know.", "...");
                 </code></pre>
+            </div>
+
+            <div>
+                <p>operadores de comparação</p>
+                <ul>
+                    <li>== Igual a</li>
+                    <li>!= Diferente de</li>
+                    <li>&gt; maior que</li>
+                    <li>&lt; menor que</li>
+                    <li>&gt;= maior igual a</li>
+                    <li>&lt;= menor que</li>
+                </ul>
             </div>
 
         </section>
@@ -111,6 +124,42 @@ const [nome_variavel]
                 </pre>
             </div>
 
+            <h3>Objetos</h3>
+            <div>
+                <pre><code>
+var obj = {
+    nonme: "Marcelo",
+    idade: 26,
+    cargo: "dev",
+    trabalha: True
+};
+//acessar propriedades
+console.log("Nome do objeto é" + obj.nome)
+
+//alterar valor de propriedades
+obj.cargo = "eletricista"
+
+//criar mais propriedades
+obj.graduacao = "engenheiro"
+                </code></pre>
+            </div>
+
+            <h3>Arrays</h3>
+            <div>
+                <pre><code>
+var arr = [69, "marcelo", True, { curso: "js", type: "arrays" }];
+var arrNum = [0, 2, 4, 6, 8];
+
+//acessando index
+console.log("posição 1 do array: " + arr[0] + "última posição: " + arr[-1]);
+
+//adiconando valor em array
+arrNum[-1] = 35;
+//altera valor em array
+arr[0] = 70;
+                </code></pre>
+            </div>
+
         </section>
 
         <section>
@@ -121,7 +170,7 @@ const [nome_variavel]
                 <pre><code>
 var theNumber = Number(prompt("Pick a number", ""));
 alert("Your number is the square root of " + theNumber * theNumber);
-</code></pre>
+                </code></pre>
             </div>
 
             <h3>Fluxo condicional</h3>
