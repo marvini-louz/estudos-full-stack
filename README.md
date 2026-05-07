@@ -8,45 +8,6 @@ Contém exemplos simples de HTML, CSS e SASS, além de testes com ferramentas do
 
 ---
 
-## 📁 Estrutura do Projeto
-
-```
-pages-html/
-  acordeao.html
-  carrossel.html
-  paginacao.html
-  popup.html
-  responsivo.html
-
-SASS/
-  css/
-    style.css
-    style.css.map
-    style.comp.css
-    style.comp.css.map
-    style.prefix.css
-  images/
-    scripts-package-json.png
-  sass/
-    main.scss
-  index.html
-  package.json
-  package-lock.json
-  README.md
-
-styles-css/
-  acordeao-style.css
-  carrossel-style.css
-  paginacao-style.css
-  popup-style.css
-  responsivo.css
-
-.gitignore
-notas-uteis.txt
-major-minor-thirds.txt
-README.md
-```
-
 ---
 
 ## 🎯 Objetivo
