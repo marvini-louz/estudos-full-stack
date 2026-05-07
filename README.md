@@ -8,8 +8,6 @@ Contém exemplos simples de HTML, CSS e SASS, além de testes com ferramentas do
 
 ---
 
----
-
 ## 🎯 Objetivo
 
 - Praticar HTML e CSS na prática
