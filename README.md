@@ -1,4 +1,4 @@
-# 📚 Repositório de Estudos — HTML, SASS e NPM
+# 📚 Repositório de Estudos — HTML, CSS, SASS, JavaScript e NPM
 
 Este repositório foi criado exclusivamente para **aprendizado e prática**.
 Contém exemplos simples de HTML, CSS e SASS, além de testes com ferramentas do ecossistema Node (npm).
@@ -12,51 +12,22 @@ Contém exemplos simples de HTML, CSS e SASS, além de testes com ferramentas do
 
 - Praticar HTML e CSS na prática
 - Aprender SASS (variáveis, mixins, nesting, etc.)
-- Entender o uso de npm em projetos front-end
+- Entender o uso de npm em projetos front-end e back-end
 - Testar pequenas ideias (componentes e layouts)
 
 ---
 
 ## 🧪 Conteúdo
 
-### 📄 HTML (pages-html)
+### 📄 HTML
 
-Páginas com testes de:
+### 🎨 CSS
 
-- Acordeão
-- Carrossel
-- Paginação
-- Popup
-- Responsividade
-
----
-
-### 🎨 CSS (styles-css)
-
-Estilos separados por funcionalidade/página.
-
----
-
-### ⚙️ SASS (pasta SASS)
-
-- Uso de `.scss`
-- Compilação para CSS
-- Testes com:
-    - Mixins
-    - Variáveis
-    - Nesting
-    - Funções
-    - Responsividade
-
----
+### ⚙️ SASS
 
 ### 📦 NPM
 
-Utilizado para:
-
-- Gerenciar dependências
-- Compilar SASS
-- Automatizar build de CSS
+### 💻 JavaScript
 
 ---
 
