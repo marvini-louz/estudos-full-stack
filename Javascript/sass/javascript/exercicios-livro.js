@@ -147,8 +147,8 @@ function sumRange(array) {
     return total;
 }
 
-console.log(numRange(1, 10));
-console.log(sumRange(numRange(1, 10)));
+console.log(numRange(1, 10) + "\n");
+console.log(sumRange(numRange(1, 10)) + "\n");
 
 console.log("\n =============== Inverter Array =============== \n");
 
@@ -156,13 +156,40 @@ console.log("\n =============== Inverter Array =============== \n");
 var array = ["A", "B", "C", "D", "E", "F"];
 
 function reverseArray(array) {
-    return array;
+    var newArray = [];
+    for (var i = array.length - 1; i >= 0; i--) {
+        newArray.push(array[i]);
+    }
+    return newArray;
 }
 
-console.log(reverseArray(array));
+console.log(reverseArray(array) + "\n");
 
-function reverseArrayInPlace(array) {
-    return;
+var arrayValue = [1, 2, 3, 4, 5, 6];
+function reverseArrayInPlace(arrayValue) {
+    for (var i = 0; i < Math.floor(arrayValue.length / 2); i++) {
+        let last = arrayValue.length - 1 - i;
+        let temp = arrayValue[i];
+        arrayValue[i] = arrayValue[last];
+        arrayValue[last] = temp;
+    }
+    return arrayValue;
 }
 
-console.log(reverseArrayInPlace(numRange(1, 10)));
+console.log(reverseArrayInPlace(arrayValue) + "\n");
+
+console.log("\n =============== Lista =============== \n");
+
+// ===== Lista
+var args = [1, 2, 3];
+function arrayToList() {
+    let prepend;
+}
+
+function listToArray() {
+    let prepend;
+}
+
+function nth() {
+    //undefined
+}

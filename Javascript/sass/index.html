@@ -153,6 +153,7 @@ const [nome_variavel]
             <div>
                 <pre><code>
 var obj = {
+    chave: valor
     nonme: "Marcelo",
     idade: 26,
     cargo: "dev",
@@ -160,6 +161,7 @@ var obj = {
 };
 //acessar propriedades
 console.log("Nome do objeto é" + obj.nome)
+obj["idade"]
 
 //alterar valor de propriedades
 obj.cargo = "eletricista"
@@ -177,9 +179,12 @@ var arrNum = [0, 2, 4, 6, 8];
 
 //acessando index
 console.log("posição 1 do array: " + arr[0] + "última posição: " + arr[-1]);
+arrayValue.length - 1 - i;
 
 //adiconando valor em array
 arrNum[-1] = 35;
+ou
+newArray.push(array[i]);
 //altera valor em array
 arr[0] = 70;
                 </code></pre>
