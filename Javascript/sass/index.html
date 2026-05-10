@@ -133,6 +133,8 @@ console.log(NaN == NaN)
             <h3>Variáveis</h3>
             <div>
                 <p>Declarar variáveis e manter seu tipo, use o "var", e camelCase </p>
+                <p>Variáveis declarada como const, são constantes, e não mudam por nada. (imutável)</p>
+                <p>Variáveis declarada com let, podem ser alteradas. (mutáveis)</p>
                 <p><strong>variaveis sem o var pode interferir em outras variáveis sem o var</strong></p>
                 <pre>
                     <code>
@@ -144,7 +146,7 @@ var [_nome_variavel]
 var [$nome_variável]
 ou
 let [nomeVariavel]
-const [nome_variavel]
+const [nome_constante]
                     </code>
                 </pre>
             </div>
@@ -187,6 +189,74 @@ ou
 newArray.push(array[i]);
 //altera valor em array
 arr[0] = 70;
+                </code></pre>
+            </div>
+
+            <h3>função</h3>
+            <div>
+                <p>Usa-se <code>function nomeFuncao(){}</code> para declarar uma função.</p>
+                <pre><code>
+function squareRoot(numBase) {
+    return numBase ** (1 / 2);
+}
+                </code></pre>
+            </div>
+
+        </section>
+
+        <section>
+            <h2>Funções</h2>
+
+            <h3>Escopo</h3>
+            <div>
+                <p>No exemplo abaixo, mostra um exemplo de escopo.</p>
+                <p>A <code>primeiraVariavelDoCodigo</code> foi declarada no escopo global</p>
+                <p>Já as demais <code>primeiraVariavelDoCodigo</code> foram declaradas dentro do escopo da função</p>
+                <pre><code>
+const primeiraVariavelDoCodigo = "texto inicial";
+
+function printToConsole() {
+    const primeiraVariavelDoCodigo = "segundo texto";
+
+    function secondFunction() {
+        const primeiraVariavelDoCodigo = "terceiro texto";
+        console.log("imprimindo segunda mensagem");
+    }
+
+    console.log(primeiraVariavelDoCodigo);
+    secondFunction();
+}
+
+printToConsole();
+                </code></pre>
+            </div>
+
+            <h3>Métodos</h3>
+            <div>
+                <p>Quando eu crio um objeto para usar uma função, eu posso criar a função dentro do objeto.</p>
+                <p>Pois a função é também um tipo de dado em JavaScript.</p>
+                <p>o <code>this.sala</code> pega a informação do próprio objeto</p>
+
+                <pre><code>
+let casa = {
+    cor: "white",
+
+    sala: 15,
+    cozinha: 10,
+    banheiro: 8,
+    quarto: 20,
+
+    calcularTamanhoTotalCasaEmM2: function () {
+        const tamanhoTotal =
+            this.sala + this.cozinha + this.banheiro + this.quarto;
+
+        console.log(`o tamanho da casa é de ${tamanhoTotal}m²`);
+
+        return tamanhoTotal;
+    },
+};
+casa.calcularTamanhoTotalCasaEmM2();
+
                 </code></pre>
             </div>
 
