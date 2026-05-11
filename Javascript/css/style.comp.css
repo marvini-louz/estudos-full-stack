@@ -30,7 +30,7 @@ body {
   position: relative;
   text-align: center;
 }
-.secao__pitagoras #answer {
+.secao__pitagoras .answer-container #answer {
   position: absolute;
   top: 5%;
   left: 70%;
@@ -73,6 +73,66 @@ body {
   margin-top: 2em;
 }
 .secao__pitagoras .hidden-element {
+  visibility: hidden;
+}
+
+.secao__bhaskara {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+}
+.secao__bhaskara #bhaskara {
+  max-width: 60rem;
+}
+.secao__bhaskara .answerBhaskara {
+  position: relative;
+  text-align: center;
+}
+.secao__bhaskara .answerBhaskara #answer {
+  position: absolute;
+  top: 5%;
+  left: 70%;
+  font-weight: bold;
+  padding: 2rem;
+  border: 0.2rem solid darkslategray;
+  border-radius: 0.1rem;
+}
+.secao__bhaskara .left-point {
+  width: 0;
+  height: 0;
+  border-left: 0.5vh solid transparent;
+  border-right: 0.5vh solid transparent;
+  border-bottom: 0.5vh solid darkslateblue;
+  position: absolute;
+  top: 90%;
+  left: -12%;
+  transform: rotate(60deg);
+}
+.secao__bhaskara .inputs-container {
+  display: flex;
+  flex-flow: column;
+  align-items: space-between;
+  justify-content: start;
+  gap: 0;
+  margin: 0.5em 0;
+}
+.secao__bhaskara .inputs-container label {
+  margin: 0.5em 0;
+  font-weight: 600;
+}
+.secao__bhaskara .inputs-container button {
+  all: unset;
+  border-radius: 5px;
+  background-color: darkblue;
+  color: whitesmoke;
+  padding: 0.25em;
+}
+.secao__bhaskara .inputs-container #calculate-bhaskara {
+  margin-top: 2em;
+}
+.secao__bhaskara .hidden-element {
   visibility: hidden;
 }
 

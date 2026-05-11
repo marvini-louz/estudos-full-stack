@@ -53,7 +53,7 @@ body {
     line-height: 1.4;
 }
 
-// #region Page - Atividades
+// Page - Atividades
 
 .secao__pitagoras {
     @include container-flex(column, center, center, 1.6rem);
@@ -65,16 +65,15 @@ body {
     .answer-container {
         position: relative;
         text-align: center;
-    }
-
-    #answer {
-        position: absolute;
-        top: 5%;
-        left: 70%;
-        font-weight: bold;
-        padding: 2rem;
-        border: 0.2rem solid darkslategray;
-        border-radius: 0.1rem;
+        #answer {
+            position: absolute;
+            top: 5%;
+            left: 70%;
+            font-weight: bold;
+            padding: 2rem;
+            border: 0.2rem solid darkslategray;
+            border-radius: 0.1rem;
+        }
     }
 
     .left-point {
@@ -116,4 +115,61 @@ body {
     }
 }
 
-// #endregion
+.secao__bhaskara {
+    @include container-flex(column, center, center, 1.6rem);
+
+    #bhaskara {
+        max-width: 60rem;
+    }
+    .answerBhaskara {
+        position: relative;
+        text-align: center;
+        #answer {
+            position: absolute;
+            top: 5%;
+            left: 70%;
+            font-weight: bold;
+            padding: 2rem;
+            border: 0.2rem solid darkslategray;
+            border-radius: 0.1rem;
+        }
+    }
+
+    .left-point {
+        width: 0;
+        height: 0;
+        border-left: 0.5vh solid transparent;
+        border-right: 0.5vh solid transparent;
+        border-bottom: 0.5vh solid darkslateblue;
+        position: absolute;
+        top: 90%;
+        left: -12%;
+        transform: rotate(60deg);
+    }
+
+    .inputs-container {
+        @include container-flex(column, space-between);
+        margin: 0.5em 0;
+
+        label {
+            margin: 0.5em 0;
+            font-weight: 600;
+        }
+
+        button {
+            all: unset;
+            border-radius: 5px;
+            background-color: darkblue;
+            color: whitesmoke;
+            padding: 0.25em;
+        }
+
+        #calculate-bhaskara {
+            margin-top: 2em;
+        }
+    }
+
+    .hidden-element {
+        visibility: hidden;
+    }
+}
