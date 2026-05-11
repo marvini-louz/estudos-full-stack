@@ -45,8 +45,8 @@ console.log(arrayNums2[0]);
 // ===== Exercício 5
 console.log("\n// ===== Exercício 5\n");
 
-function squareRoot(numBase) {
-    return numBase ** (1 / 2);
+function squareRoot(radicand) {
+    return radicand ** (1 / 2);
 }
 
 function bhaskara(numA, numB, numC) {
@@ -123,3 +123,17 @@ function valorAtualizado(valor) {
 }
 
 console.log("Valor atualizado é: " + valorAtualizado(50));
+
+// ===== Exercício 10
+console.log("\n// ===== Exercício 10\n");
+
+function squareRoot(radicand) {
+    return radicand ** (1 / 2);
+}
+function hypotenuse(catA, catB) {
+    //H = raiz de (c1²+c2²)
+    var sum = catA ** 2 + catB ** 2;
+    return squareRoot(sum);
+}
+
+console.log("Hipotenusa: " + hypotenuse(3, 4));

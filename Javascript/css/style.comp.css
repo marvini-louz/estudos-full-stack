@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Cabin", sans-serif;
+  line-height: 1.4;
+}
+
+.secao__pitagoras {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+}
+.secao__pitagoras #pythagoras {
+  max-width: 60rem;
+}
+.secao__pitagoras .answer-container {
+  position: relative;
+  text-align: center;
+}
+.secao__pitagoras #answer {
+  position: absolute;
+  top: 5%;
+  left: 70%;
+  font-weight: bold;
+  padding: 2rem;
+  border: 0.2rem solid darkslategray;
+  border-radius: 0.1rem;
+}
+.secao__pitagoras .left-point {
+  width: 0;
+  height: 0;
+  border-left: 0.5vh solid transparent;
+  border-right: 0.5vh solid transparent;
+  border-bottom: 0.5vh solid darkslateblue;
+  position: absolute;
+  top: 90%;
+  left: -12%;
+  transform: rotate(60deg);
+}
+.secao__pitagoras .inputs-container {
+  display: flex;
+  flex-flow: column;
+  align-items: space-between;
+  justify-content: start;
+  gap: 0;
+  margin: 0.5em 0;
+}
+.secao__pitagoras .inputs-container label {
+  margin: 0.5em 0;
+  font-weight: 600;
+}
+.secao__pitagoras .inputs-container button {
+  all: unset;
+  border-radius: 5px;
+  background-color: darkblue;
+  color: whitesmoke;
+  padding: 0.25em;
+}
+.secao__pitagoras .inputs-container #calculate-hypotenuse {
+  margin-top: 2em;
+}
+.secao__pitagoras .hidden-element {
+  visibility: hidden;
+}
+
+/*# sourceMappingURL=style.comp.css.map */

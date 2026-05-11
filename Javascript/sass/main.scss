@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
+
+@mixin container-flex($flow: row, $align: stretch, $justify: start, $gap: 0) {
+    display: flex;
+    flex-flow: $flow;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}
+
+// para importar @include flex-col
+@mixin textos($size, $weigth, $height, $color) {
+    font-size: $size;
+    font-weight: $weigth;
+    line-height: $height;
+    color: $color;
+}
+
+@mixin responsive($tamanho) {
+    @if $tamanho == small {
+        @media (max-width: 27.5em) {
+            @content;
+        }
+    } @else if $tamanho == medium {
+        @media (max-width: 48em) {
+            @content;
+        }
+    } @else if $tamanho == big {
+        @media (max-width: 90em) {
+            @content;
+        }
+    } @else {
+        @media (max-width: 110em) {
+            @content;
+        }
+    }
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Cabin", sans-serif;
+    line-height: 1.4;
+}
+
+// #region Page - Atividades
+
+.secao__pitagoras {
+    @include container-flex(column, center, center, 1.6rem);
+
+    #pythagoras {
+        max-width: 60rem;
+    }
+
+    .answer-container {
+        position: relative;
+        text-align: center;
+    }
+
+    #answer {
+        position: absolute;
+        top: 5%;
+        left: 70%;
+        font-weight: bold;
+        padding: 2rem;
+        border: 0.2rem solid darkslategray;
+        border-radius: 0.1rem;
+    }
+
+    .left-point {
+        width: 0;
+        height: 0;
+        border-left: 0.5vh solid transparent;
+        border-right: 0.5vh solid transparent;
+        border-bottom: 0.5vh solid darkslateblue;
+        position: absolute;
+        top: 90%;
+        left: -12%;
+        transform: rotate(60deg);
+    }
+
+    .inputs-container {
+        @include container-flex(column, space-between);
+        margin: 0.5em 0;
+
+        label {
+            margin: 0.5em 0;
+            font-weight: 600;
+        }
+
+        button {
+            all: unset;
+            border-radius: 5px;
+            background-color: darkblue;
+            color: whitesmoke;
+            padding: 0.25em;
+        }
+
+        #calculate-hypotenuse {
+            margin-top: 2em;
+        }
+    }
+
+    .hidden-element {
+        visibility: hidden;
+    }
+}
+
+// #endregion

@@ -6,13 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aprendendo JavaScript</title>
 
-    <link rel="stylesheet" href="/Javascript/sass/css/style.css">
+    <link rel="stylesheet" href="/Javascript/css/style.css">
 </head>
 
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/Javascript/pages/atividades.html">Atividades</a></li>
+            </ul>
+        </nav>
+    </header>
     <div>
         <h1>Aprendendo JavaScript</h1>
 
+        <!-- Seção inicial -->
         <section>
             <h2>Iniciando</h2>
             <div>
@@ -74,6 +82,7 @@ if(num2 !== '5'){
 
         </section>
 
+        <!-- Tipos de dados -->
         <section>
             <h2>Tipos de Dados</h2>
 
@@ -175,6 +184,7 @@ obj.graduacao = "engenheiro"
 
             <h3>Arrays</h3>
             <div>
+                <p>Declaração de Arrays</p>
                 <pre><code>
 var arr = [69, "marcelo", True, { curso: "js", type: "arrays" }];
 var arrNum = [0, 2, 4, 6, 8];
@@ -190,6 +200,34 @@ newArray.push(array[i]);
 //altera valor em array
 arr[0] = 70;
                 </code></pre>
+                <p>Métodos de Arrays</p>
+                <pre><code>
+const listaNotas = [
+    { nome: "Daniel", nota: 5 },
+    { nome: "Pedro", nota: 15 },
+    { nome: "Lucas", nota: 12 },
+    { nome: "Fabricio", nota: 16 },
+    { nome: "CR7", nota: 0 },
+];
+
+// filter - Cria um novo array contendo apenas os itens que atendem à condição
+const alunosAprovados = listaNotas.filter(function (aluno) {
+    return aluno.nota >= 12;
+});
+console.table(alunosAprovados);
+
+// find - Retorna o primeiro item que atende à condição especificada
+const alunosQueTiraramZero = listaNotas.find(function (aluno) {
+    return aluno.nota === 0;
+});
+console.log(alunosQueTiraramZero);
+
+// map - Cria um novo array transformando os itens do array original
+const alunosAprovadosNome = alunosAprovados.map(function (aluno) {
+    return aluno.nome;
+});
+console.log(alunosAprovadosNome);
+                </code></pre>
             </div>
 
             <h3>função</h3>
@@ -204,6 +242,7 @@ function squareRoot(numBase) {
 
         </section>
 
+        <!-- Funções -->
         <section>
             <h2>Funções</h2>
 
@@ -262,6 +301,7 @@ casa.calcularTamanhoTotalCasaEmM2();
 
         </section>
 
+        <!-- Fluxos de controle -->
         <section>
             <h2>Fluxos de Controle</h2>
 
@@ -336,6 +376,31 @@ console.log(number);
             </div>
 
 
+        </section>
+
+        <!-- Na pagina -->
+        <section>
+            <h2>Usando no HTML</h2>
+            <div>
+                <p>Pegando elementos presentes no HTML</p>
+                <p>Você define um id ou uma classe para um elemento e depois usa</p>
+                <pre><code>
+const firstSideRef = document.getElementById("id__name__atribute");
+const firstSideRef = document.getElementByClass("class__name__atribute");
+                </code></pre>
+                <p>Atribui o valor de um elemento para uma variável</p>
+                <pre><code>
+const firstSide = firstSideRef.value;
+const secondSide = secondSideRef.value;
+                </code></pre>
+                <p>Fazer ação com um botão</p>
+                <pre><code>
+function onCalculateButtonClick() {
+    console.log("function executed");
+}
+calculateButton.addEventListener("click", onCalculateButtonClick);
+                </code></pre>
+            </div>
         </section>
 
     </div>

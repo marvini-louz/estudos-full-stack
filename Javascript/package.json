@@ -1,9 +1,9 @@
 {
-    "name": "learn-javascript",
+    "name": "learning-javascript",
     "version": "1.0.0",
-    "description": "Project to learn JavaScript.",
+    "description": "",
     "license": "ISC",
-    "author": "Marcelo Vinícius",
+    "author": "",
     "type": "commonjs",
     "main": "index.js",
     "scripts": {
@@ -11,7 +11,7 @@
         "compile:sass": "sass sass/main.scss css/style.comp.css",
         "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.cs",
         "compress:css": "sass css/style.prefix.cs css/style.css --style compressed",
-        "build:css": "npm-run-all compile:sass prefix:css prefix:css"
+        "build:css": "npm-run-all compile:sass prefix:css compress:css"
     },
     "devDependencies": {
         "autoprefixer": "^10.5.0",
