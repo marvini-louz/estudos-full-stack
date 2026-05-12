@@ -137,3 +137,40 @@ function hypotenuse(catA, catB) {
 }
 
 console.log("Hipotenusa: " + hypotenuse(3, 4));
+
+// ===== Exercício 11
+console.log("\n// ===== Exercício 11\n");
+
+function calcFibonacci(limite) {
+    let fibonacci = [0, 1];
+
+    while (fibonacci.at(-1) < limite) {
+        let proximo = fibonacci.at(-1) + fibonacci.at(-2);
+
+        fibonacci.push(proximo);
+    }
+
+    return fibonacci;
+}
+
+console.log(calcFibonacci(2584));
+
+function calcFibonacci2(termos) {
+    let fibonacci = [0, 1];
+
+    if (termos <= 0) {
+        return [];
+    } else if (termos === 1) {
+        return [0];
+    }
+
+    for (let i = 2; i < termos; i++) {
+        let next = fibonacci[i - 1] + fibonacci[i - 2];
+
+        fibonacci.push(next);
+    }
+
+    return fibonacci;
+}
+
+console.log(calcFibonacci2(5));

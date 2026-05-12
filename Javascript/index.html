@@ -307,9 +307,29 @@ casa.calcularTamanhoTotalCasaEmM2();
 
             <h3>Fluxo linear</h3>
             <div>
+                <p>Validação na mesma linha, por tipo.</p>
                 <pre><code>
 var theNumber = Number(prompt("Pick a number", ""));
 alert("Your number is the square root of " + theNumber * theNumber);
+                </code></pre>
+                <p>Operador ternário, mais direto, quando uma condiçao for simples</p>
+                <pre><code>
+const user = {nome: 'marcelo', idade: 26, cargo: 'dev'}
+user.nome === 'marcelo' 
+? console.log(True) 
+: console.log(False);
+OU
+user.nome === 'marcelo' 
+? console.log(True) 
+: user.cargo === 'dev' 
+? console.log(True) 
+: console.log(False);
+OU
+user.nome === 'marcelo' && user.dev === 'cargo'
+? console.log(True) 
+: user.cargo === 'dev' || user.idade >= 18
+? console.log(True) 
+: console.log(False);
                 </code></pre>
             </div>
 
