@@ -5,9 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API Filmes</title>
+    <meta name="icon">
+
+    <link rel="stylesheet" href="/Javascript/css/style.css">
 </head>
 
-<body>
+<body class="api__secao__body">
+    <header class="api__secao__header">
+        <div class="header__navigate__menu">
+            <div class="header__navigate__logo">
+                <img src="/Javascript/assets/icons/film-slate.png" alt="Movie icon">
+                <p>API Filmes</p>
+            </div>
+
+            <div class="header__navigate__search">
+                <div class="header__navigate--box-name">
+                    <label for="movie-name">Nome do filme </label>
+                    <input type="text" name="movie-name" id="movie-name">
+                </div>
+
+                <div class="header__navigate__box-year">
+                    <label for="movie-year">Ano do filme </label>
+                    <input type="text" name="movie-year" id="movie-year">
+                </div>
+
+                <button><img src="/Javascript/assets/icons/loupe.png" alt="ícone de lupa"></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="api__secao__main">
+        <div class="main__header__title">
+            <h2>Lista de filmes!</h2>
+            <div class="main__header__lista"></div>
+        </div>
+
+        <article class="api__secao__main--modal-overlay">
+            <section class="modal-background">
+
+            </section>
+            <section class="api__secao__main--modal-container">
+                <div>
+                    <h2 class="movie-title"></h2>
+                    <div class="movie-cover"></div>
+                    <div class="movie-infos">
+                        <p class="movie-description"></p>
+                        <p class="movie-cast"></p>
+                        <p class="movie-gender"></p>
+                    </div>
+                </div>
+                <button>Add to list</button>
+            </section>
+        </article>
+    </main>
+
+    <footer></footer>
 
 </body>
 

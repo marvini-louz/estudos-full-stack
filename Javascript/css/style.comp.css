@@ -136,4 +136,100 @@ body {
   visibility: hidden;
 }
 
+.api__secao__body .api__secao__header .header__navigate__search button:link, .api__secao__body .api__secao__header .header__navigate__search button:visited {
+  align-self: center;
+  background-color: #303030;
+  border-radius: 20rem;
+  padding: 1.02rem 2.5rem;
+  transition: all ease-in 150ms;
+}
+
+.api__secao__body .api__secao__header .header__navigate__search button:hover, .api__secao__body .api__secao__header .header__navigate__search button:active {
+  align-self: center;
+  background-color: #564787;
+}
+
+.api__secao__body {
+  background-color: #dbcbd8;
+}
+.api__secao__body .api__secao__header .header__navigate__menu {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0;
+  padding: 2rem;
+  background-color: #101935;
+}
+.api__secao__body .api__secao__header .header__navigate__menu .header__navigate__logo {
+  font-size: 2.3rem;
+  font-weight: bold;
+  line-height: 1.4;
+  color: #dbcbd8;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.api__secao__body .api__secao__header .header__navigate__menu .header__navigate__logo img {
+  width: 5rem;
+}
+.api__secao__body .api__secao__header .header__navigate__search {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  font-size: 1.92rem;
+  font-weight: 200;
+  line-height: 1.4;
+  color: #dbcbd8;
+}
+.api__secao__body .api__secao__header .header__navigate__search input {
+  border-radius: 0.6rem;
+  height: 3rem;
+  padding: 0.5rem;
+  font-size: 1.6rem;
+}
+.api__secao__body .api__secao__header .header__navigate__search #movie-name {
+  width: 30rem;
+}
+.api__secao__body .api__secao__header .header__navigate__search #movie-year {
+  width: 7rem;
+}
+.api__secao__body .api__secao__header .header__navigate__search button {
+  border-radius: 0.6rem;
+  padding: 0.5rem;
+  height: 3.5rem;
+  width: 3.5rem;
+}
+.api__secao__body .api__secao__header .header__navigate__search button img {
+  width: 100%;
+}
+.api__secao__body .api__secao__main {
+  padding: 2rem;
+}
+.api__secao__body .api__secao__main .main__header__title {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  font-size: 1.92rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #564787;
+}
+.api__secao__body .api__secao__main .main__header__lista {
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  max-width: 180rem;
+  max-height: 70rem;
+}
+.api__secao__body .api__secao__main--modal-overlay {
+  display: none;
+}
+
 /*# sourceMappingURL=style.comp.css.map */

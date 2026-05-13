@@ -84,3 +84,5 @@ function onCalculateButtonClickBhaskara() {
 bhaskaraButton.addEventListener("click", onCalculateButtonClickBhaskara);
 
 // Projeto 1 - API FILMES
+import "dotenv/config";
+const API_KEY = process.env.API_KEY;

@@ -8,8 +8,7 @@
     gap: $gap;
 }
 
-// para importar @include flex-col
-@mixin textos($size, $weigth, $height, $color) {
+@mixin textos($size: 1rem, $weigth: 200, $height: 1, $color: black) {
     font-size: $size;
     font-weight: $weigth;
     line-height: $height;
@@ -174,4 +173,108 @@ body {
     }
 }
 
-// Page - Projeto 1
+// Projeto 1 - API FILMES
+
+$cor-escura-1: #101935;
+$cor-escura-2: #564787;
+$cor-clara-1: #dbcbd8;
+$cor-clara-2: #f2fdff;
+$cor-clara-3: #9ad4d6;
+
+%botao-lv {
+    align-self: center;
+    background-color: #303030;
+    border-radius: 20rem;
+    padding: 1.02rem 2.5rem;
+    transition: all ease-in 150ms;
+}
+%botao-ha {
+    align-self: center;
+    background-color: $cor-escura-2;
+}
+
+.api__secao__body {
+    background-color: $cor-clara-1;
+
+    .api__secao__header {
+        .header__navigate__menu {
+            @include container-flex($align: center, $justify: space-around);
+            padding: 2rem;
+            background-color: $cor-escura-1;
+
+            .header__navigate__logo {
+                @include textos(2.3rem, bold, 1.4, $cor-clara-1);
+                @include container-flex(
+                    $align: center,
+                    $justify: center,
+                    $gap: 1rem
+                );
+
+                img {
+                    width: 5rem;
+                }
+            }
+        }
+
+        .header__navigate__search {
+            @include container-flex(
+                $align: center,
+                $justify: center,
+                $gap: 1.6rem
+            );
+            @include textos(1.92rem, 200, 1.4, $cor-clara-1);
+
+            input {
+                border-radius: 0.6rem;
+                height: 3rem;
+                padding: 0.5rem;
+                font-size: 1.6rem;
+            }
+            #movie-name {
+                width: 30rem;
+            }
+            #movie-year {
+                width: 7rem;
+            }
+            button {
+                border-radius: 0.6rem;
+                padding: 0.5rem;
+                height: 3.5rem;
+                width: 3.5rem;
+                img {
+                    width: 100%;
+                }
+
+                &:link,
+                &:visited {
+                    @extend %botao-lv;
+                }
+
+                &:hover,
+                &:active {
+                    @extend %botao-ha;
+                }
+            }
+        }
+    }
+
+    .api__secao__main {
+        padding: 2rem;
+
+        .main__header__title {
+            @include container-flex(column, center, center, 1.6rem);
+            @include textos(1.92rem, 400, 1.4, $cor-escura-2);
+        }
+        .main__header__lista {
+            overflow-y: scroll;
+            width: 100%;
+            height: 100%;
+            max-width: 180rem;
+            max-height: 70rem;
+        }
+
+        &--modal-overlay {
+            display: none;
+        }
+    }
+}
