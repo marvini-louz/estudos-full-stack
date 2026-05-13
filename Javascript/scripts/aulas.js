@@ -174,3 +174,135 @@ function calcFibonacci2(termos) {
 }
 
 console.log(calcFibonacci2(5));
+
+// ===== Exercício 12
+console.log("\n// ===== Exercício 12\n");
+
+const vendas = [23, 23, 4, 56, 76, 4, 56];
+const custo = 10;
+
+function calcularVendas(vendasPordia, custoHamburguer) {
+    let total = 0;
+    for (let i = 0; i < vendasPordia.length; i++) {
+        total += vendasPordia[i] * custoHamburguer;
+    }
+    return total;
+}
+var totalVendas = calcularVendas(vendas, custo);
+console.log("Total: " + totalVendas);
+
+// ===== Exercício 13
+console.log("\n// ===== Exercício 13\n");
+
+const cardapio = [
+    { item: "carne assada", valor: 40 },
+    { item: "arroz frito", valor: 25 },
+    { item: "feijão tropeiro", valor: 30 },
+    { item: "batata frita", valor: 12 },
+];
+
+function exibirCardapio(cardapio) {
+    console.log("Este é nosso cardápio: ");
+    for (let i = 0; i < cardapio.length; i++) {
+        console.log(cardapio[i].item + ": ", cardapio[i].valor);
+    }
+}
+exibirCardapio(cardapio);
+
+// ===== Exercício 14
+console.log("\n// ===== Exercício 14\n");
+
+const vendasDiarias = [123, 142345, 34, 63457, 46, 568];
+
+function calcularRenda(vendasDiarias) {
+    let recebidos = 0;
+
+    for (var i = 0; i < vendasDiarias.length; i++) {
+        recebidos += vendasDiarias[i];
+    }
+    console.log("Total R$ " + recebidos.toFixed(2));
+}
+calcularRenda(vendasDiarias);
+
+let vendasDiarias2 = 5;
+function calcularRenda2(vendasDiarias2) {
+    let recebidos = 0;
+    let vendas = 0;
+    let finalizada = false;
+
+    while (!finalizada) {
+        const valor = 20;
+        recebidos += valor;
+        vendas++;
+
+        if (vendas >= vendasDiarias2) {
+            finalizada = true;
+        }
+    }
+    console.log("Total R$ " + recebidos.toFixed(2));
+}
+calcularRenda2(vendasDiarias2);
+
+// ===== Exercício 15
+console.log("\n// ===== Exercício 15\n");
+
+const listaPedidos = [
+    "pedido 1",
+    "pedido 2",
+    "pedido 3",
+    "pedido 4",
+    "pedido 1",
+    "pedido 2",
+    "pedido 3",
+    "pedido 4",
+];
+
+function entregarPedido(listaPedidos) {
+    for (var i = 0; i < listaPedidos.length; i++) {
+        console.log("Pedido entregue: " + listaPedidos[i]);
+    }
+}
+entregarPedido(listaPedidos);
+
+const listaPedidos2 = [
+    "pedido 1",
+    "pedido 2",
+    "pedido 3",
+    "pedido 4",
+    "pedido 1",
+    "pedido 2",
+    "pedido 3",
+    "pedido 4",
+];
+
+function entregarPedido2(listaPedidos) {
+    let pedidoAtual = "";
+    console.log("\nIniciando entregas...");
+
+    while (listaPedidos.length > 0) {
+        pedidoAtual = listaPedidos.shift();
+        console.log("Pedido atual: " + pedidoAtual);
+    }
+    console.log("Entrgas finalizadas...");
+}
+entregarPedido2(listaPedidos2);
+
+// ===== Exercício 16
+console.log("\n// ===== Exercício 16\n");
+
+function advinharNumero() {
+    const numero = Math.floor(Math.random() * 10);
+    let tentativa;
+    let chances = 0;
+
+    do {
+        tentativa = Math.floor(Math.random() * 10);
+        chances++;
+
+        if (tentativa === numero) {
+            console.log("Parabéns!! tentativas: " + tentativa);
+        }
+    } while (tentativa !== numero);
+}
+
+advinharNumero();

@@ -82,3 +82,5 @@ function onCalculateButtonClickBhaskara() {
 }
 
 bhaskaraButton.addEventListener("click", onCalculateButtonClickBhaskara);
+
+// Projeto 1 - API FILMES
