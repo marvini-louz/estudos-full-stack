@@ -37,7 +37,7 @@ calculateButtonHypotenuse.addEventListener(
     onCalculateButtonClickHypotenuse,
 );
 
-// Cálculo Bhaskara
+// #region Cálculo Bhaskara
 const numberA = document.getElementById("number-a");
 const numberB = document.getElementById("number-b");
 const numberC = document.getElementById("number-c");
@@ -82,7 +82,4 @@ function onCalculateButtonClickBhaskara() {
 }
 
 bhaskaraButton.addEventListener("click", onCalculateButtonClickBhaskara);
-
-// Projeto 1 - API FILMES
-import "dotenv/config";
-const API_KEY = process.env.API_KEY;
+// #end-region
