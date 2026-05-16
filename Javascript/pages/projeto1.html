@@ -8,6 +8,7 @@
     <meta name="icon">
 
     <link rel="stylesheet" href="/Javascript/css/style.css">
+    <link rel="stylesheet" href="/Javascript/src/notie/dist/notie.min.css">
 </head>
 
 <body class="api__secao__body">
@@ -20,61 +21,41 @@
 
             <div class="header__navigate__search">
                 <div class="header__navigate--box-name">
-                    <label for="movie-name">Nome do filme </label>
+                    <label for="movie-name">Movie name </label>
                     <input type="text" name="movie-name" id="movie-name">
                 </div>
 
                 <div class="header__navigate__box-year">
-                    <label for="movie-year">Ano do filme </label>
+                    <label for="movie-year">Movie year </label>
                     <input type="text" name="movie-year" id="movie-year">
                 </div>
 
-                <button><img src="/Javascript/assets/icons/loupe.png" alt="ícone de lupa"></button>
+                <button id="btn-search-movie">
+                    <img src="/Javascript/assets/icons/loupe.png" alt="ícone de lupa">
+                </button>
             </div>
         </div>
     </header>
 
     <main class="api__secao__main">
         <div class="main__header__title">
-            <h2>Lista de filmes!</h2>
-            <div class="main__header__lista"></div>
+            <h2>Movies List!</h2>
+            <div class="main__header__lista">
+                <article>
+                    <img src="https://m.media-amazon.com/images/M/MV5BNGY3N2ZhYmMtYTlmYi00ZWIzLWJiZWMtMjgxMjljYTk3MDAwXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+                        alt="Movie Poster">
+                    <button class="btn-remove-list" type="button">
+                        <img src="/Javascript/assets/icons/remove.png">Remove movie
+                    </button>
+                </article>
+            </div>
         </div>
 
         <article id="modal-overlay" class="api__secao__main--modal-overlay">
-            <section class="modal-background">
+            <section id="modal-background" class="modal-background"></section>
 
-            </section>
-            <section class="api__secao__main--modal-container">
-                <div class="modal-container-body">
-                    <div>
-                        <h2 class="movie-title">Deadpool - 2016</h2>
-                        <div class="movie-cover">
-                            <img src="https://m.media-amazon.com/images/M/MV5BNzY3ZWU5NGQtOTViNC00ZWVmLTliNjAtNzViNzlkZWQ4YzQ4XkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg"
-                                alt="Movie Cover">
-                        </div>
-                    </div>
-                    <div class="movie-infos">
-                        <h3 class="movie-description">
-                            A wisecracking mercenary gets experimented on and becomes
-                            immortal yet hideously scarred, and sets out to track down
-                            the man who ruined his looks.
-                        </h3>
-                        <div class="movie-cast-box">
-                            <p>Cast</p>
-                            <p class="movie-cast">
-                                Ryan Reynolds, Morena Baccarin, T.J. Miller
-                            </p>
-                        </div>
-                        <div class="movie-genre-box">
-                            <p>Genre</p>
-                            <p class="movie-genre">Action, Comedy, Sci-Fi</p>
-                        </div>
-                    </div>
-                </div>
-                <button id="btn-add-list">
-                    <img src="/Javascript/assets/icons/wish-list.png" alt="Wish List">
-                    Wish List
-                </button>
+            <section id="modal-container" class="api__secao__main--modal-container">
+
             </section>
         </article>
     </main>
@@ -82,6 +63,7 @@
     <footer></footer>
 
     <script src="/Javascript/scripts/scripts-filmes.js"></script>
+    <script src="/Javascript/src/notie/dist/notie.min.js"></script>
 </body>
 
 </html>

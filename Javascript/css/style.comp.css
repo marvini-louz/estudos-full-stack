@@ -136,15 +136,7 @@ body {
   visibility: hidden;
 }
 
-.api__secao__body .api__secao__main--modal-container button:link, .api__secao__body .api__secao__main--modal-container button:visited, .api__secao__body .api__secao__header .header__navigate__search button:link, .api__secao__body .api__secao__header .header__navigate__search button:visited {
-  align-self: center;
-  background-color: #303030;
-  border-radius: 20rem;
-  padding: 1.02rem 2.5rem;
-  transition: all ease-in 150ms;
-}
-
-.api__secao__body .api__secao__main--modal-container button:hover, .api__secao__body .api__secao__main--modal-container button:active, .api__secao__body .api__secao__header .header__navigate__search button:hover, .api__secao__body .api__secao__header .header__navigate__search button:active {
+.api__secao__body .api__secao__main--modal-container #btn-add-list:hover, .api__secao__body .api__secao__main--modal-container #btn-add-list:active, .api__secao__body .api__secao__main .main__header__title .main__header__lista article .btn-remove-list:hover, .api__secao__body .api__secao__main .main__header__title .main__header__lista article .btn-remove-list:active, .api__secao__body .api__secao__header .header__navigate__search button:hover, .api__secao__body .api__secao__header .header__navigate__search button:active {
   cursor: pointer;
   align-self: center;
   background-color: #564787;
@@ -153,6 +145,13 @@ body {
 
 .api__secao__body {
   background-color: #dbcbd8;
+  padding-top: 10rem;
+}
+.api__secao__body .api__secao__header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 .api__secao__body .api__secao__header .header__navigate__menu {
   display: flex;
@@ -224,17 +223,41 @@ body {
   color: #564787;
 }
 .api__secao__body .api__secao__main .main__header__title .main__header__lista {
-  overflow-y: scroll;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+  overflow-y: scroll hidden;
   width: 100%;
   height: 100%;
   max-width: 180rem;
   max-height: 70rem;
 }
-.api__secao__body .api__secao__main #modal-overlay {
-  display: none;
-}
-.api__secao__body .api__secao__main #modal-overlay.open {
+.api__secao__body .api__secao__main .main__header__title .main__header__lista article {
   display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+}
+.api__secao__body .api__secao__main .main__header__title .main__header__lista article .btn-remove-list {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  border-radius: 0.6rem;
+  padding: 0.5rem 2rem;
+}
+.api__secao__body .api__secao__main .main__header__title .main__header__lista article .btn-remove-list img {
+  height: 2rem;
+  width: 2rem;
+}
+.api__secao__body .api__secao__main .main__header__title .main__header__lista article img {
+  max-width: 25rem;
+  border-radius: 1rem;
 }
 .api__secao__body .api__secao__main--modal-overlay {
   display: flex;
@@ -247,6 +270,10 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s ease;
 }
 .api__secao__body .api__secao__main--modal-overlay .modal-background {
   position: absolute;
@@ -256,6 +283,11 @@ body {
   z-index: 0;
   opacity: 0.4;
 }
+.api__secao__body .api__secao__main #modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+}
 .api__secao__body .api__secao__main--modal-container {
   z-index: 1;
   display: flex;
@@ -264,7 +296,7 @@ body {
   justify-content: center;
   gap: 1.6rem;
   background-color: #564787;
-  padding: 2rem 4rem;
+  padding: 2rem 10rem;
   border-radius: 1.8rem;
   max-width: 100rem;
 }
@@ -325,7 +357,7 @@ body {
   line-height: 1.4;
   color: #101935;
 }
-.api__secao__body .api__secao__main--modal-container button {
+.api__secao__body .api__secao__main--modal-container #btn-add-list {
   display: flex;
   flex-flow: row;
   align-items: center;
@@ -334,7 +366,7 @@ body {
   border-radius: 0.6rem;
   padding: 0.5rem 2rem;
 }
-.api__secao__body .api__secao__main--modal-container button img {
+.api__secao__body .api__secao__main--modal-container #btn-add-list img {
   height: 3rem;
   width: 3rem;
 }
