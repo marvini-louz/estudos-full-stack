@@ -242,6 +242,10 @@ body {
   justify-content: center;
   gap: 1.6rem;
 }
+.api__secao__body .api__secao__main .main__header__title .main__header__lista article #movie-cover {
+  border-radius: 0.6rem;
+  height: 30rem;
+}
 .api__secao__body .api__secao__main .main__header__title .main__header__lista article .btn-remove-list {
   display: flex;
   flex-flow: row;
@@ -254,10 +258,6 @@ body {
 .api__secao__body .api__secao__main .main__header__title .main__header__lista article .btn-remove-list img {
   height: 2rem;
   width: 2rem;
-}
-.api__secao__body .api__secao__main .main__header__title .main__header__lista article img {
-  max-width: 25rem;
-  border-radius: 1rem;
 }
 .api__secao__body .api__secao__main--modal-overlay {
   display: flex;
@@ -306,20 +306,28 @@ body {
   align-items: start;
   justify-content: center;
   gap: 1.6rem;
+  align-items: flex-start;
 }
 .api__secao__body .api__secao__main--modal-container .modal-container-body .movie-title {
   font-size: 2.3rem;
   font-weight: 700;
   line-height: 1.4;
   color: #101935;
+  width: 35rem;
+  overflow-wrap: break-word;
   padding: 1rem;
 }
-.api__secao__body .api__secao__main--modal-container .modal-container-body .movie-cover {
-  flex: 1;
-}
-.api__secao__body .api__secao__main--modal-container .modal-container-body .movie-cover img {
-  max-width: 35rem;
+.api__secao__body .api__secao__main--modal-container .modal-container-body .movie-poster {
+  width: 35rem;
+  height: 50rem;
+  overflow: hidden;
   border-radius: 1rem;
+}
+.api__secao__body .api__secao__main--modal-container .modal-container-body .movie-poster #movie-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .api__secao__body .api__secao__main--modal-container .modal-container-body .movie-infos {
   display: flex;

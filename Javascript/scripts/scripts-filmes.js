@@ -6,8 +6,11 @@ const modal_overlay = document.getElementById("modal-overlay");
 const modal_container = document.getElementById("modal-container");
 const modal_background = document.getElementById("modal-background");
 const btn_search_movie = document.getElementById("btn-search-movie");
+const btn_remove_list = document.getElementById("btn-remove-list");
 const movie_name = document.getElementById("movie-name");
 const movie_year = document.getElementById("movie-year");
+const movies_list = document.getElementById("movies-list");
+let movie_list = [];
 
 async function onClickSearchMovie() {
     try {
@@ -56,9 +59,11 @@ function createModalContainer(data) {
     <div class="modal-container-body">
         <div>
             <h2 class="movie-title">${data.Title} - ${data.Year}</h2>
-            <div class="movie-cover">
-                <img src="${data.Poster}"
-                    alt="Movie Cover">
+            <div>
+                <div class="movie-poster">
+                    <img id="movie-poster" src="${data.Poster}"
+                        alt="Movie Cover">
+                </div>
             </div>
         </div>
         <div class="movie-infos">
@@ -78,13 +83,43 @@ function createModalContainer(data) {
         Wish List
     </button>
     `;
+
+    const btn_add_list = document.getElementById("btn-add-list");
+
+    btn_add_list.addEventListener("click", function () {
+        onClickAddMovieList(data);
+    });
 }
 
 function onClickCloseBackground() {
     modal_overlay.classList.remove("open");
 }
 
+function onClickAddMovieList(data) {
+    movie_list.push(data);
+
+    movies_list.innerHTML += `
+        <article>
+            <img id="movie-cover" src="${data.Poster}" alt="Movie Poster: ${data.Title}">
+
+            <button id="btn-remove-list" class="btn-remove-list" type="button">
+                <img src="/Javascript/assets/icons/remove.png">Remove movie
+            </button>
+        </article>
+    `;
+
+    onClickCloseBackground();
+}
+
+function onClickRemoveList() {
+    movies_list.remove();
+}
+
+movie_name.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        onClickSearchMovie();
+    }
+});
+
 modal_background.addEventListener("click", onClickCloseBackground);
 btn_search_movie.addEventListener("click", onClickSearchMovie);
-
-// =-=-=-=
