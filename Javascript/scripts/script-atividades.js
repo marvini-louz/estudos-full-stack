@@ -1,9 +1,8 @@
 // Cálculo da hipotenusa
 const firstSideRef = document.getElementById("side-1");
 const secondSideRef = document.getElementById("side-2");
-const calculateButtonHypotenuse = document.getElementById(
-    "calculate-hypotenuse",
-);
+
+const btnCalculateHypotenuse = document.getElementById("calculate-hypotenuse");
 const answerDiv = document.getElementById("answer");
 
 function squareRoot(radicand) {
@@ -14,9 +13,19 @@ function hypotenuse(catA, catB) {
     return squareRoot(sum);
 }
 
-function onCalculateButtonClickHypotenuse() {
+function onClickCalculateHypotenuse() {
     const firstSide = firstSideRef.value;
     const secondSide = secondSideRef.value;
+
+    if (
+        firstSide.value === "" ||
+        secondSide.value === "" ||
+        isNaN(firstSide.value) ||
+        isNaN(secondSide.value)
+    ) {
+        console.error("Insira números válidos");
+        return;
+    }
 
     console.log("function executed - hypotenuse");
 
@@ -32,10 +41,7 @@ function onCalculateButtonClickHypotenuse() {
         <div class="left-point"></div>`;
 }
 
-calculateButtonHypotenuse.addEventListener(
-    "click",
-    onCalculateButtonClickHypotenuse,
-);
+btnCalculateHypotenuse.addEventListener("click", onClickCalculateHypotenuse);
 
 // #region Cálculo Bhaskara
 const numberA = document.getElementById("number-a");
