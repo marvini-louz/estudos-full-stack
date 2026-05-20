@@ -300,6 +300,70 @@ casa.calcularTamanhoTotalCasaEmM2();
                 </code></pre>
             </div>
 
+            <h3>Promises e Async/Await</h3>
+            <div>
+                <p>promises é a forma inteligente de evitar callbacks</p>
+
+                <pre><code>
+// As Promises são uma maneira muito melhor de trabalhar com código assíncrono em JavaScript do que a antiga abordagem de callbacks, propensa a erros.
+function getUser() {
+    console.log("Recuperando informações do usuário");
+
+    const promise1 = new Promise((resolve) => {
+        setTimeout(() => {
+            resolve({ id: 0, name: "Daniel", surname: "Porto" });
+        }, 2000);
+    });
+
+    return promise1;
+}
+
+function getFriendList(user) {
+    console.log(
+        `Recuperando lista de amigos do usuário ${user.name} ${user.surname}`,
+    );
+
+    const promise2 = new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(["joão", "bruna", "felipe", "Lira"]);
+        }, 2000);
+    });
+
+    return promise2;
+}
+
+function getPhotos(username) {
+    console.log(`Recuperando fotos do usuário: ${username}`);
+    const promise3 = new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(["egito", "bahamas", "maldivas", "suécia"]);
+        }, 2000);
+    });
+    return promise3;
+}
+
+getUser()
+    .then((user) => getFriendList(user))
+    .then((friends) => getPhotos(friends[3]))
+    .then((photos) => console.log(photos));
+                </code></pre>
+
+                <p>async/await é uma sintaxe especial para trabalhar com promessas de uma maneira mais confortável.
+                    Usamos a
+                    palavra-chave async para declarar uma função assíncrona que retorna uma promessa, e a palavra-chave
+                    await faz com que a função espere pela promessa.</p>
+                <pre><code>
+async function displayPhotos() {
+    const user = await getUser();
+    const friends = await getFriendList(user);
+    const photos = await getPhotos(friends[3]);
+    console.log(photos);
+}
+
+displayPhotos();
+            </code></pre>
+            </div>
+
         </section>
 
         <!-- Fluxos de controle -->
@@ -396,11 +460,32 @@ console.log(number);
                 </code></pre>
             </div>
 
+            <h3>Capturando erros</h3>
+            <div>
+                <pre><code>
+function getRectArea(width, height) {
+  if (isNaN(width) || isNaN(height)) {
+    throw new Error("Parameter is not a number!");
+  }
+  return console.log(width * height);
+}
+
+try {
+  getRectArea(3, "A");
+} catch (e) {
+  console.error(e);
+  // Expected output: Error: Parameter is not a number!
+} finally { // sempre vai executar, sendo favorável ou não as expressões
+  alert( 'finally' );
+}
+                </code></pre>
+            </div>
 
         </section>
 
         <!-- Na pagina -->
         <section>
+
             <h2>Usando no HTML</h2>
             <div>
                 <p>Pegando elementos presentes no HTML</p>
@@ -416,12 +501,42 @@ const secondSide = secondSideRef.value;
                 </code></pre>
                 <p>Fazer ação com um botão</p>
                 <pre><code>
+function renderMovies() {
+    // Limpa container
+    movies_list.innerHTML = "";
+
+    // Percorre array
+    movie_list.forEach((data) => {
+        // Renderiza card
+        movies_list.innerHTML += `
+            &lt;article id="movie-card-${data.imdbID}">
+
+            &lt;img id="movie-cover" src="${data.Poster}" alt="Movie Poster: ${data.Title}">
+
+            &lt;button id="btn-remove-list" class="btn-remove-list" type="button" 
+            onclick="onClickRemoveList('${data.imdbID}')">
+                &lt;img src="/Javascript/assets/icons/remove.png">
+                Remove movie
+            &lt;/button>
+        &lt;/article>
+        `;
+    });
+}
 function onCalculateButtonClick() {
     console.log("function executed");
 }
 calculateButton.addEventListener("click", onCalculateButtonClick);
+// Detecta Enter no input
+movie_name.addEventListener("keydown", function (event) {
+    // Se apertar Enter
+    if (event.key === "Enter") {
+        // Faz pesquisa
+        onClickSearchMovie();
+    }
+});
                 </code></pre>
             </div>
+
         </section>
 
     </div>
