@@ -2,7 +2,7 @@
 var identidade = {
     nome: "Marcelo",
     sobrenome: "Vinícius",
-    Idade: 26,
+    idade: 26,
     cpf: "703.033.921-50",
     função: "eletricista",
 };
@@ -126,18 +126,82 @@ function getPhotos(username) {
     return promise3;
 }
 
-getUser()
-    .then((user) => getFriendList(user))
-    .then((friends) => getPhotos(friends[3]))
-    .then((photos) => console.log(photos));
+// getUser()
+//     .then((user) => getFriendList(user))
+//     .then((friends) => getPhotos(friends[3]))
+//     .then((photos) => console.log(photos));
 
 //Async/Await
 
 async function displayPhotos() {
-    const user = await getUser();
-    const friends = await getFriendList(user);
-    const photos = await getPhotos(friends[3]);
-    console.log(photos);
+    try {
+        const user = await getUser();
+        const friends = await getFriendList(user);
+        const photos = await getPhotos(friends[3]);
+        console.log(photos);
+    } catch (error) {
+        console.log(error);
+    } finally {
+        console.log("Terminando demandas.");
+    }
 }
 
-displayPhotos();
+// displayPhotos();
+
+console.log("\n\n\n");
+
+// Factory Function
+function createAccount(userName, accNumber, initalBalance) {
+    return {
+        name: userName,
+        accNumber,
+        balance: initalBalance,
+        displayBalance: function () {
+            console.log(`Conta: ${accNumber} \nSaldo: ${this.balance}`);
+        },
+    };
+}
+const account1 = createAccount("Marcelo", "159753-9", 20);
+console.log(account1);
+account1.displayBalance();
+
+const account2 = createAccount("Vinicius", "159147-9", 2340);
+console.log(account2);
+account2.displayBalance();
+
+console.log("\n\n\n");
+// Objeto construtor
+
+function Account(userName, accNumber, initialBalance) {
+    this.name = userName;
+    this.accNumber = accNumber;
+    this.balance = initialBalance;
+    this.displayBalance = function () {
+        console.log(`Conta: ${accNumber} \nSaldo: ${this.balance}`);
+    };
+}
+
+const acc1 = new Account("Marcelo", "159753-9", 20);
+console.log(acc1);
+acc1.displayBalance();
+const acc2 = new Account("Vinicius", "159147-9", 2340);
+console.log(acc2);
+acc2.displayBalance();
+
+//Classes
+class BankAccount {
+    constructor(personName, initialBalance, address) {
+        this.personName = personName;
+        this.balance = initialBalance;
+        this.address = address;
+    }
+
+    printInfo() {
+        console.log(
+            `Essa conta pertence a ${this.personName}, residente do endereço ${this.address}
+            e possui um saldo atual de ${Number(this.balance).toFixed(2)} reais.`,
+        );
+    }
+}
+
+const ba1 = new BankAccount("Daniel", 2000, "Rua que sobe e desce");

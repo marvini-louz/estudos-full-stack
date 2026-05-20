@@ -15,6 +15,7 @@
             <ul>
                 <li><a href="/Javascript/pages/atividades.html">Atividades</a></li>
                 <li><a href="/Javascript/pages/projeto1.html">Projeto 1 - API Filmes</a></li>
+                <li><a href="/Javascript/pages/projeto2.html">Projeto 2 - Stopwatch</a></li>
             </ul>
         </nav>
     </header>
@@ -247,6 +248,79 @@ function squareRoot(numBase) {
         <section>
             <h2>Funções</h2>
 
+            <h3>Constructor</h3>
+            <div>
+                <p>Classe construtora, ela cria vários obejtos (construtores usam PascalCase)</p>
+                <pre><code>
+function Account(userName, accNumber, initialBalance) {
+    this.name = userName;
+    this.accNumber = accNumber;
+    this.balance = initialBalance;
+    this.displayBalance = function () {
+        console.log(`Conta: ${accNumber} \nSaldo: ${this.balance}`);
+    };
+}
+
+const acc1 = new Account("Marcelo", "159753-9", 20);
+console.log(acc1);
+acc1.displayBalance();
+const acc2 = new Account("Vinicius", "159147-9", 2340);
+console.log(acc2);
+acc2.displayBalance();
+                </code></pre>
+            </div>
+
+            <h3>Classes</h3>
+            <div>
+                <p>método para definir classe em javascript.</p>
+                <pre><code>
+class BankAccount {
+    constructor(personName, initialBalance, address) {
+        this.personName = personName;
+        this.balance = initialBalance;
+        this.address = address;
+    }
+
+    printInfo() {
+        console.log(
+            `Essa conta pertence a ${this.personName}, residente do endereço ${this.address}
+            e possui um saldo atual de ${Number(this.balance).toFixed(2)} reais.`
+        );
+    }
+}
+
+const ba1 = new BankAccount(
+    'Daniel',
+    2000,
+    'Rua que sobe e desce'
+);
+                </code></pre>
+            </div>
+
+            <h3>Factory Function</h3>
+            <div>
+                <p>Para criar objetos atraves de função.</p>
+                <pre><code>
+function createAccount(userName, accNumber, initalBalance) {
+    return {
+        name: userName,
+        accNumber,
+        balance: initalBalance,
+        displayBalance: function () {
+            console.log(`Conta: ${accNumber} \nSaldo: ${this.balance}`);
+        },
+    };
+}
+const account1 = createAccount("Marcelo", "159753-9", 20);
+console.log(account1);
+account1.displayBalance();
+
+const account2 = createAccount("Vinicius", "159147-9", 2340);
+console.log(account2);
+account2.displayBalance();
+                </code></pre>
+            </div>
+
             <h3>Escopo</h3>
             <div>
                 <p>No exemplo abaixo, mostra um exemplo de escopo.</p>
@@ -354,10 +428,16 @@ getUser()
                     await faz com que a função espere pela promessa.</p>
                 <pre><code>
 async function displayPhotos() {
-    const user = await getUser();
-    const friends = await getFriendList(user);
-    const photos = await getPhotos(friends[3]);
-    console.log(photos);
+    try {
+        const user = await getUser();
+        const friends = await getFriendList(user);
+        const photos = await getPhotos(friends[3]);
+        console.log(photos);
+    } catch (error) {
+        console.log(error);
+    } finally {
+        console.log("Terminando demandas.");
+    }
 }
 
 displayPhotos();
