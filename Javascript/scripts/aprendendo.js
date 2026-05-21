@@ -189,17 +189,36 @@ console.log(acc2);
 acc2.displayBalance();
 
 //Classes
+
 class BankAccount {
+    _balance = 0;
+
     constructor(personName, initialBalance, address) {
         this.personName = personName;
-        this.balance = initialBalance;
+        this._balance = initialBalance;
         this.address = address;
+    }
+
+    //impondo regras
+    get balance() {
+        return this._balance;
+    }
+
+    set balance(value) {
+        if (Math.abs(this._balance - value) > 2000) {
+            throw new Error("Não é permitido valores maiores que 2000");
+        }
+        if (value > this._balance) {
+            throw new Error("Você não possui saldo suficiente.");
+        }
+
+        this._balance = value;
     }
 
     printInfo() {
         console.log(
             `Essa conta pertence a ${this.personName}, residente do endereço ${this.address}
-            e possui um saldo atual de ${Number(this.balance).toFixed(2)} reais.`,
+            e possui um saldo atual de ${Number(this._balance).toFixed(2)} reais.`,
         );
     }
 }
