@@ -1,7 +1,7 @@
-const btnAddStop = document.getElementById("btn-Add-Stop-Watch");
 const btnStartStopwatch = document.getElementById("btn-Start-Stop-Watch");
 const btnStopStopwatch = document.getElementById("btn-Stop-Stop-Watch");
 const btnResetStopwatch = document.getElementById("btn-Reset-Stop-Watch");
+const display = document.getElementById("stopwatch");
 
 class Stopwatch {
     //membro privado de uma classe, só é acessado dentro da classe
@@ -25,6 +25,7 @@ class Stopwatch {
     }
 
     reset() {
+        this.stop();
         this.#elapsedTimeSeconds = 0;
     }
 
@@ -56,6 +57,9 @@ class Stopwatch {
 }
 
 const sw1 = new Stopwatch();
+setInterval(() => {
+    display.textContent = sw1.elapsedTime;
+}, 100);
 
 btnStartStopwatch.addEventListener("click", () => sw1.start());
 btnStopStopwatch.addEventListener("click", () => sw1.stop());

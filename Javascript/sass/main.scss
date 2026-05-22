@@ -405,3 +405,78 @@ $cor-clara-3: #9ad4d6;
 }
 
 // Projeto 2 - StopWatch
+
+$cor-clara-lavender: #d9dbf1;
+$cor-clara-pale-slate: #d0cdd7;
+$cor-clara-paleslate: #acb0bd;
+$light-slate-grey: #778991;
+$dark-slate-grey: #416165;
+$dark-teal-1: #264d57;
+$dark-teal-2: #0b3948;
+
+%button-lv {
+    align-self: center;
+    background-color: $dark-teal-2;
+    transition: all ease-in 150ms;
+}
+%button-ha {
+    cursor: pointer;
+    align-self: center;
+    background-color: $dark-teal-2;
+    transition: all ease-in 150ms;
+}
+
+.secao__main__body {
+    background-color: $dark-slate-grey;
+
+    .secao__main__container {
+        @include container-flex(column, center, center, 1.6rem);
+
+        .main__container__box {
+            border-radius: 2rem;
+            border: $light-slate-grey solid 0.1rem;
+            padding: 2rem 5rem;
+
+            h2 {
+                font-size: xx-large;
+                text-align: center;
+                padding: 1rem 3rem;
+            }
+
+            .container__stopwatch {
+                @include container-flex(column, center, center);
+                padding: 2rem;
+
+                #stopwatch {
+                    font-size: 2rem;
+                }
+            }
+
+            .container__buttons {
+                @include container-flex(row, center, center, 1.6rem);
+                padding: 1.6rem;
+
+                #btn-Start-Stop-Watch,
+                #btn-Stop-Stop-Watch,
+                #btn-Reset-Stop-Watch {
+                    border: $dark-teal-1 solid 0.1rem;
+                    border-radius: 1rem;
+                    background-color: $dark-slate-grey;
+                    padding: 1.02rem 2.5rem;
+
+                    &:hover,
+                    &:active {
+                        @extend %button-ha;
+                    }
+                    &:link,
+                    &:visited {
+                        @extend %button-lv;
+                    }
+                }
+                .hidden {
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+}
