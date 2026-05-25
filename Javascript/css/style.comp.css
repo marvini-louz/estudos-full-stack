@@ -400,7 +400,19 @@ body {
 }
 
 .secao__main__body {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
   background-color: #416165;
+}
+.secao__main__body .secao__header__container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
 }
 .secao__main__body .secao__main__container {
   display: flex;

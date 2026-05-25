@@ -427,7 +427,12 @@ $dark-teal-2: #0b3948;
 }
 
 .secao__main__body {
+    @include container-flex(column, center, center);
     background-color: $dark-slate-grey;
+
+    .secao__header__container {
+        @include container-flex(column, center, center);
+    }
 
     .secao__main__container {
         @include container-flex(column, center, center, 1.6rem);
