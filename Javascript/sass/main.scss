@@ -485,3 +485,83 @@ $dark-teal-2: #0b3948;
         }
     }
 }
+
+// Projeto 3 - e-Comerce
+
+$cor-preta-soft: #050505;
+$darkest-teal-deep: #12282b;
+$dark-teal-deep: #105058;
+$pacific-cyan: #1b9aaa;
+$bone-light: #dddbcb;
+$eggshell-soft: #e9e6d7;
+$old-lace: #f5f1e3;
+$floral-white: #faf8f1;
+$white-clean: #ffffff;
+
+%botao-lv-ecommerce {
+    align-self: center;
+    background-color: #303030;
+    border-radius: 20rem;
+    padding: 1.02rem 2.5rem;
+    transition: all ease-in 150ms;
+}
+
+%botao-ha-ecommerce {
+    cursor: pointer;
+    align-self: center;
+    background-color: $pacific-cyan;
+    transition: all ease-in 150ms;
+}
+
+.secao__body__container {
+    background-color: $eggshell-soft;
+    padding-top: 10rem;
+
+    .secao__header__superior {
+        background-color: $darkest-teal-deep;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+
+        .header__menu__superior {
+            @include container-flex(row, center, space-between);
+            height: 10rem;
+            padding: 0 3rem;
+
+            .logo img {
+                height: 10rem;
+                width: auto;
+            }
+
+            .navigate_buttons {
+                @include container-flex(row, center, center, 4rem);
+
+                button {
+                    all: unset;
+                    width: 5rem;
+                    height: 5rem;
+                    padding: 1.6rem;
+                    border-radius: 2rem;
+                    color: $floral-white;
+                    font-size: 1.33rem;
+                    display: flex;
+                    gap: 1rem;
+                    flex-flow: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    img {
+                        width: 5rem;
+                        height: 5rem;
+                    }
+
+                    &:hover,
+                    &:active {
+                        @extend %botao-ha-ecommerce;
+                    }
+                }
+            }
+        }
+    }
+}

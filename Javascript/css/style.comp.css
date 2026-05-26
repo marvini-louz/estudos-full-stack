@@ -462,4 +462,61 @@ body {
   visibility: hidden;
 }
 
+.secao__body__container .secao__header__superior .header__menu__superior .navigate_buttons button:hover, .secao__body__container .secao__header__superior .header__menu__superior .navigate_buttons button:active {
+  cursor: pointer;
+  align-self: center;
+  background-color: #1b9aaa;
+  transition: all ease-in 150ms;
+}
+
+.secao__body__container {
+  background-color: #e9e6d7;
+  padding-top: 10rem;
+}
+.secao__body__container .secao__header__superior {
+  background-color: #12282b;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.secao__body__container .secao__header__superior .header__menu__superior {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  height: 10rem;
+  padding: 0 3rem;
+}
+.secao__body__container .secao__header__superior .header__menu__superior .logo img {
+  height: 10rem;
+  width: auto;
+}
+.secao__body__container .secao__header__superior .header__menu__superior .navigate_buttons {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+.secao__body__container .secao__header__superior .header__menu__superior .navigate_buttons button {
+  all: unset;
+  width: 5rem;
+  height: 5rem;
+  padding: 1.6rem;
+  border-radius: 2rem;
+  color: #faf8f1;
+  font-size: 1.33rem;
+  display: flex;
+  gap: 1rem;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+.secao__body__container .secao__header__superior .header__menu__superior .navigate_buttons button img {
+  width: 5rem;
+  height: 5rem;
+}
+
 /*# sourceMappingURL=style.comp.css.map */
