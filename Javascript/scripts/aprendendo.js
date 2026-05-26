@@ -224,3 +224,33 @@ class BankAccount {
 }
 
 const ba1 = new BankAccount("Daniel", 2000, "Rua que sobe e desce");
+
+// Destructuring
+const person = {
+    name: "Augusto",
+    lastName: "Burle",
+    age: 79,
+    netWorth: 1_000_000,
+
+    car: {
+        brand: "Volkswagen",
+        model: "gol",
+        year: 2002,
+    },
+};
+
+const { name, lastName, age } = person;
+const { brand, model, year } = person.car;
+const presString = `Esse é ${name} ${lastName} e dirige ${brand} ${model} ${year}.`;
+console.log(presString);
+
+//ou com função
+
+function printUserInfo({ name, lastName, age, netWorth }) {
+    const presentationString = `Esse é ${name} ${lastName}, ${age} anos,
+       patrimônio de ${netWorth} reais`;
+
+    console.log(presentationString);
+}
+
+printUserInfo(person);
