@@ -564,4 +564,35 @@ $white-clean: #ffffff;
             }
         }
     }
+
+    .secao__main__container {
+        @include container-flex(column, center, center);
+        padding: 2rem;
+
+        p {
+            font-size: 2rem;
+        }
+
+        .secao__main__catalago {
+            @include container-flex(row, center, center, 1.6rem);
+            flex-wrap: wrap;
+            border: solid red 1px;
+            width: 170rem;
+
+            .catalogo__lista__produtos {
+                @include container-flex(column, center, center, 1.6rem);
+                height: 40rem;
+                width: 30rem;
+
+                #image-box {
+                    border-radius: 1rem;
+
+                    img {
+                        max-width: 15rem;
+                        max-height: 30rem;
+                    }
+                }
+            }
+        }
+    }
 }

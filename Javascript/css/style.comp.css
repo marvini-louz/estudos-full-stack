@@ -518,5 +518,42 @@ body {
   width: 5rem;
   height: 5rem;
 }
+.secao__body__container .secao__main__container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 2rem;
+}
+.secao__body__container .secao__main__container p {
+  font-size: 2rem;
+}
+.secao__body__container .secao__main__container .secao__main__catalago {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+  border: solid red 1px;
+  width: 170rem;
+}
+.secao__body__container .secao__main__container .secao__main__catalago .catalogo__lista__produtos {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  height: 40rem;
+  width: 30rem;
+}
+.secao__body__container .secao__main__container .secao__main__catalago .catalogo__lista__produtos #image-box {
+  border-radius: 1rem;
+}
+.secao__body__container .secao__main__container .secao__main__catalago .catalogo__lista__produtos #image-box img {
+  max-width: 15rem;
+  max-height: 30rem;
+}
 
 /*# sourceMappingURL=style.comp.css.map */
