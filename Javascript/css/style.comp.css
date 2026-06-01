@@ -462,7 +462,7 @@ body {
   visibility: hidden;
 }
 
-.secao__body__container .secao__header__superior .header__menu__superior .navigate_buttons button:hover, .secao__body__container .secao__header__superior .header__menu__superior .navigate_buttons button:active {
+.secao__body__container .secao__main__container .secao__main__catalago .catalogo__lista__produtos .btn_add_item_cart:hover, .secao__body__container .secao__header__superior .header__menu__superior .navigate_buttons button:hover, .secao__body__container .secao__header__superior .header__menu__superior .navigate_buttons button:active {
   cursor: pointer;
   align-self: center;
   background-color: #1b9aaa;
@@ -473,12 +473,39 @@ body {
   background-color: #e9e6d7;
   padding-top: 10rem;
 }
+.secao__body__container .secao__cart__container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 36rem;
+  background-color: #12282b;
+  z-index: 1000;
+}
+.secao__body__container .secao__cart__container .header_cart {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+  padding: 1.6rem;
+}
+.secao__body__container .secao__cart__container .header_cart #close-cart {
+  padding: 2rem;
+  width: 3rem;
+  height: 3rem;
+}
+.secao__body__container .secao__cart__container .header_cart #close-cart img {
+  align-self: center;
+  width: 100%;
+  height: 100%;
+}
 .secao__body__container .secao__header__superior {
   background-color: #12282b;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 999;
 }
 .secao__body__container .secao__header__superior .header__menu__superior {
   display: flex;
@@ -536,7 +563,6 @@ body {
   justify-content: center;
   gap: 1.6rem;
   flex-wrap: wrap;
-  border: solid red 1px;
   width: 170rem;
 }
 .secao__body__container .secao__main__container .secao__main__catalago .catalogo__lista__produtos {
@@ -547,6 +573,16 @@ body {
   gap: 1.6rem;
   height: 40rem;
   width: 30rem;
+}
+.secao__body__container .secao__main__container .secao__main__catalago .catalogo__lista__produtos .btn_add_item_cart {
+  background-color: #105058;
+  color: #dddbcb;
+  padding: 1rem 1.6rem;
+  border-radius: 0.2rem;
+  border: none;
+}
+.secao__body__container .secao__main__container .secao__main__catalago .catalogo__lista__produtos .btn_add_item_cart:hover {
+  color: black;
 }
 .secao__body__container .secao__main__container .secao__main__catalago .catalogo__lista__produtos #image-box {
   border-radius: 1rem;

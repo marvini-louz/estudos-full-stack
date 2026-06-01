@@ -517,12 +517,39 @@ $white-clean: #ffffff;
     background-color: $eggshell-soft;
     padding-top: 10rem;
 
+    .secao__cart__container {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 36rem;
+        background-color: $darkest-teal-deep;
+        z-index: 1000;
+
+        .header_cart {
+            @include container-flex(row, center, space-between, 1.6rem);
+            padding: 1.6rem;
+
+            #close-cart {
+                padding: 2rem;
+                width: 3rem;
+                height: 3rem;
+
+                img {
+                    align-self: center;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
     .secao__header__superior {
         background-color: $darkest-teal-deep;
         position: fixed;
         top: 0;
         width: 100%;
-        z-index: 1000;
+        z-index: 999;
 
         .header__menu__superior {
             @include container-flex(row, center, space-between);
@@ -576,13 +603,25 @@ $white-clean: #ffffff;
         .secao__main__catalago {
             @include container-flex(row, center, center, 1.6rem);
             flex-wrap: wrap;
-            border: solid red 1px;
             width: 170rem;
 
             .catalogo__lista__produtos {
                 @include container-flex(column, center, center, 1.6rem);
                 height: 40rem;
                 width: 30rem;
+
+                .btn_add_item_cart {
+                    background-color: $dark-teal-deep;
+                    color: $bone-light;
+                    padding: 1rem 1.6rem;
+                    border-radius: 0.2rem;
+                    border: none;
+
+                    &:hover {
+                        @extend %botao-ha-ecommerce;
+                        color: black;
+                    }
+                }
 
                 #image-box {
                     border-radius: 1rem;

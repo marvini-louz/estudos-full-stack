@@ -131,7 +131,7 @@ for (const indexProduct of catalogo) {
             <p>${indexProduct.nome}</p>
             <p>$${indexProduct.valor.toFixed(2)}</p>
         </div>
-        <button>Adicionar</button>
+        <button id="btn-add-item-cart" class="btn_add_item_cart">Adicionar</button>
     </div>
     `;
 
